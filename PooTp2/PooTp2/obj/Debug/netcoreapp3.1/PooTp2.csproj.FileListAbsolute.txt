@@ -1,0 +1,42 @@
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.csproj.AssemblyReference.cache
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.AssemblyInfoInputs.cache
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.AssemblyInfo.cs
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.csproj.CoreCompileInputs.cache
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.exe
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.deps.json
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.runtimeconfig.json
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.runtimeconfig.dev.json
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.dll
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.pdb
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.dll
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.pdb
+C:\Users\Yassine Mestaoui\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.genruntimeconfig.cache
+C:\Users\yassi\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.csproj.AssemblyReference.cache
+C:\Users\yassi\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yassi\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.AssemblyInfoInputs.cache
+C:\Users\yassi\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.AssemblyInfo.cs
+C:\Users\yassi\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.csproj.CoreCompileInputs.cache
+C:\Users\yassi\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.dll
+C:\Users\yassi\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.pdb
+C:\Users\yassi\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.exe
+C:\Users\yassi\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.deps.json
+C:\Users\yassi\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.runtimeconfig.json
+C:\Users\yassi\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.runtimeconfig.dev.json
+C:\Users\yassi\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.dll
+C:\Users\yassi\source\repos\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.pdb
+C:\Users\yassi\source\repos\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.genruntimeconfig.cache
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.exe
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.deps.json
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.runtimeconfig.json
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.runtimeconfig.dev.json
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.dll
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\bin\Debug\netcoreapp3.1\PooTp2.pdb
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.csproj.AssemblyReference.cache
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.AssemblyInfoInputs.cache
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.AssemblyInfo.cs
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.csproj.CoreCompileInputs.cache
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.dll
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.pdb
+C:\Users\ayoub\Downloads\PooTp2\PooTp2\obj\Debug\netcoreapp3.1\PooTp2.genruntimeconfig.cache

@@ -1,0 +1,15 @@
+C:\Users\ayoub\source\repos\Problem1\bin\Debug\net5.0\Problem1.exe
+C:\Users\ayoub\source\repos\Problem1\bin\Debug\net5.0\Problem1.deps.json
+C:\Users\ayoub\source\repos\Problem1\bin\Debug\net5.0\Problem1.runtimeconfig.json
+C:\Users\ayoub\source\repos\Problem1\bin\Debug\net5.0\Problem1.runtimeconfig.dev.json
+C:\Users\ayoub\source\repos\Problem1\bin\Debug\net5.0\Problem1.dll
+C:\Users\ayoub\source\repos\Problem1\bin\Debug\net5.0\ref\Problem1.dll
+C:\Users\ayoub\source\repos\Problem1\bin\Debug\net5.0\Problem1.pdb
+C:\Users\ayoub\source\repos\Problem1\obj\Debug\net5.0\Problem1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ayoub\source\repos\Problem1\obj\Debug\net5.0\Problem1.AssemblyInfoInputs.cache
+C:\Users\ayoub\source\repos\Problem1\obj\Debug\net5.0\Problem1.AssemblyInfo.cs
+C:\Users\ayoub\source\repos\Problem1\obj\Debug\net5.0\Problem1.csproj.CoreCompileInputs.cache
+C:\Users\ayoub\source\repos\Problem1\obj\Debug\net5.0\Problem1.dll
+C:\Users\ayoub\source\repos\Problem1\obj\Debug\net5.0\ref\Problem1.dll
+C:\Users\ayoub\source\repos\Problem1\obj\Debug\net5.0\Problem1.pdb
+C:\Users\ayoub\source\repos\Problem1\obj\Debug\net5.0\Problem1.genruntimeconfig.cache

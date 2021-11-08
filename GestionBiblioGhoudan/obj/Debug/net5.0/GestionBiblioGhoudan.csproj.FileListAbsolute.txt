@@ -1,0 +1,16 @@
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\bin\Debug\net5.0\GestionBiblioGhoudan.exe
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\bin\Debug\net5.0\GestionBiblioGhoudan.deps.json
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\bin\Debug\net5.0\GestionBiblioGhoudan.runtimeconfig.json
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\bin\Debug\net5.0\GestionBiblioGhoudan.runtimeconfig.dev.json
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\bin\Debug\net5.0\GestionBiblioGhoudan.dll
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\bin\Debug\net5.0\ref\GestionBiblioGhoudan.dll
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\bin\Debug\net5.0\GestionBiblioGhoudan.pdb
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\obj\Debug\net5.0\GestionBiblioGhoudan.csproj.AssemblyReference.cache
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\obj\Debug\net5.0\GestionBiblioGhoudan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\obj\Debug\net5.0\GestionBiblioGhoudan.AssemblyInfoInputs.cache
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\obj\Debug\net5.0\GestionBiblioGhoudan.AssemblyInfo.cs
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\obj\Debug\net5.0\GestionBiblioGhoudan.csproj.CoreCompileInputs.cache
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\obj\Debug\net5.0\GestionBiblioGhoudan.dll
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\obj\Debug\net5.0\ref\GestionBiblioGhoudan.dll
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\obj\Debug\net5.0\GestionBiblioGhoudan.pdb
+C:\Users\ayoub\source\repos\GestionBiblioGhoudan\obj\Debug\net5.0\GestionBiblioGhoudan.genruntimeconfig.cache

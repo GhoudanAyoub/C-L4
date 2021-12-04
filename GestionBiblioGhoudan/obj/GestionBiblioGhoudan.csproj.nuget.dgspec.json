@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ayoub\\source\\repos\\GestionBiblioGhoudan\\GestionBiblioGhoudan.csproj": {}
+    "c:\\Users\\ayoub\\source\\repos\\C-L4\\GestionBiblioGhoudan\\GestionBiblioGhoudan.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ayoub\\source\\repos\\GestionBiblioGhoudan\\GestionBiblioGhoudan.csproj": {
+    "c:\\Users\\ayoub\\source\\repos\\C-L4\\GestionBiblioGhoudan\\GestionBiblioGhoudan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ayoub\\source\\repos\\GestionBiblioGhoudan\\GestionBiblioGhoudan.csproj",
+        "projectUniqueName": "c:\\Users\\ayoub\\source\\repos\\C-L4\\GestionBiblioGhoudan\\GestionBiblioGhoudan.csproj",
         "projectName": "GestionBiblioGhoudan",
-        "projectPath": "C:\\Users\\ayoub\\source\\repos\\GestionBiblioGhoudan\\GestionBiblioGhoudan.csproj",
+        "projectPath": "c:\\Users\\ayoub\\source\\repos\\C-L4\\GestionBiblioGhoudan\\GestionBiblioGhoudan.csproj",
         "packagesPath": "C:\\Users\\ayoub\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ayoub\\source\\repos\\GestionBiblioGhoudan\\obj\\",
+        "outputPath": "c:\\Users\\ayoub\\source\\repos\\C-L4\\GestionBiblioGhoudan\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

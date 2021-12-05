@@ -101,6 +101,9 @@ namespace GestionBibFormGhoudan
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
+            textBox8.Clear();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,6 +135,7 @@ namespace GestionBibFormGhoudan
         {
             LivrePanel.BringToFront();
             CDPanel.SendToBack();
+            PeriodaquePanel.SendToBack();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -139,6 +143,7 @@ namespace GestionBibFormGhoudan
             LivrePanel.SendToBack();
 
             CDPanel.BringToFront();
+            PeriodaquePanel.SendToBack();
 
         }
 
@@ -205,6 +210,78 @@ namespace GestionBibFormGhoudan
             button8.Enabled = false;
             button9.Enabled = false;
             button7.Enabled = true;
+        }
+
+        private void listView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (listView3.SelectedItems.Count > 0)
+            {
+                textBox6.Text = listView3.SelectedItems[0].SubItems[0].Text;
+                textBox7.Text = listView3.SelectedItems[0].SubItems[1].Text;
+                textBox8.Text = listView3.SelectedItems[0].SubItems[2].Text;
+                button12.Enabled = true;
+                button11.Enabled = false;
+                button13.Enabled = true;
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            listView3.Items[listView3.SelectedIndices[0]].Remove();
+            Clean();
+            button12.Enabled = false;
+            button11.Enabled = true;
+            button13.Enabled = false;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+            string name = textBox6.Text;
+            int num = int.Parse(textBox7.Text);
+            String per = textBox8.Text;
+            DateTime date = dateTimePicker3.Value;
+            Periodique cd = new Periodique(name, num, per,date);
+            employer.ajouter(cd);
+            ListViewItem ligne = new ListViewItem(cd.Nom);
+            ligne.SubItems.Add(cd.Numero.ToString());
+            ligne.SubItems.Add(cd.Periodicite);
+
+            listView3.Items.Add(ligne);
+            Clean();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            LivrePanel.SendToBack();
+            CDPanel.SendToBack();
+            PeriodaquePanel.BringToFront();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+
+            string name = textBox6.Text;
+            int num = int.Parse(textBox7.Text);
+            String per = textBox8.Text;
+            DateTime date = dateTimePicker3.Value;
+            Periodique cd = new Periodique(name, num, per, date);
+            employer.ajouter(cd);
+            ListViewItem ligne = new ListViewItem(cd.Nom);
+            ligne.SubItems.Add(cd.Numero.ToString());
+            ligne.SubItems.Add(cd.Periodicite);
+
+            listView3.Items[listView3.SelectedIndices[0]] = ligne;
+
+            Clean();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Form2().Show();
         }
     }
 }

@@ -8,3 +8,14 @@ C:\Users\ayoub\source\repos\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhouda
 C:\Users\ayoub\source\repos\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.csproj.CoreCompileInputs.cache
 C:\Users\ayoub\source\repos\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.exe
 C:\Users\ayoub\source\repos\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.pdb
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\GestionBibFormGhoudan.exe.config
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\GestionBibFormGhoudan.exe
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\GestionBibFormGhoudan.pdb
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.csproj.AssemblyReference.cache
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.Form1.resources
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.Properties.Resources.resources
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.csproj.GenerateResource.cache
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.csproj.CoreCompileInputs.cache
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.exe
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.pdb
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.Form2.resources

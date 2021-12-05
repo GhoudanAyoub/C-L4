@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\BIB-EMSIApp",
     "\\GestionBiblioGhoudan",
     "\\Problem1"
   ],
-  "SelectedNode": "\\GestionBiblioGhoudan\\Program.cs",
+  "SelectedNode": "\\BIB-EMSIApp\\GestionBiblio.sln",
   "PreviewInSolutionExplorer": false
 }

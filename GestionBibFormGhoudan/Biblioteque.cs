@@ -12,6 +12,6 @@ namespace GestionBiblioGhoudan
         public abstract Boolean delete(T o);
         public abstract Boolean Modifier(T o);
         public abstract T AfficherParIndex(int index);
-        public abstract T[] toString();
+        public abstract List<T> afficher();
     }
 }

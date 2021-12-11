@@ -6,34 +6,24 @@ using System.Threading.Tasks;
 
 namespace GestionBiblioGhoudan
 {
-    class Cd:Ouvrage
+    class Cd
     {
         private int id;
-        private static int comp;
         private String auteur;
-
         private String titre;
+        private DateTime? dateEmprunt;
 
-        public Cd(DateTime dateEmprunt, string auteur, string titre) : base(dateEmprunt)
-        {
-            this.id = ++comp;
-            this.auteur = auteur;
-            this.titre = titre;
-        }
-        public Cd(int id, DateTime dateEmprunt, string auteur, string titre) : base(dateEmprunt)
+        public Cd(int id, string auteur, string titre, DateTime? dateEmprunt)
         {
             this.id = id;
             this.auteur = auteur;
             this.titre = titre;
+            this.dateEmprunt = dateEmprunt;
         }
 
+        public int Id { get => id; set => id = value; }
         public string Auteur { get => auteur; set => auteur = value; }
         public string Titre { get => titre; set => titre = value; }
-        public int Id { get => id; set => id = value; }
-
-        public override string ToString()
-        {
-            return base.ToString()+" "+auteur+" "+titre;
-        }
+        public DateTime? DateEmprunt { get => dateEmprunt; set => dateEmprunt = value; }
     }
 }

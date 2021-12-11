@@ -6,37 +6,27 @@ using System.Threading.Tasks;
 
 namespace GestionBiblioGhoudan
 {
-    class Livre:Ouvrage
+    class Livre
     {
         private int id;
-        private static int comp;
         private String auteur;
         private String titre;
         private String periodique;
+        private DateTime? dateEmprunt;
 
-        public Livre(int id,string auteur, string titre, string periodique, DateTime dateEmprunt) : base(dateEmprunt)
+        public Livre(int id, string auteur, string titre, string periodique, DateTime? dateEmprunt)
         {
-            this.Id =id;
+            this.id = id;
             this.auteur = auteur;
             this.titre = titre;
             this.periodique = periodique;
-        }
-        public Livre(string auteur, string titre, string periodique, DateTime dateEmprunt) :base( dateEmprunt)
-        {
-            this.Id = ++comp;
-            this.auteur = auteur;
-            this.titre = titre;
-            this.periodique = periodique;
+            this.dateEmprunt = dateEmprunt;
         }
 
         public string Auteur { get => auteur; set => auteur = value; }
         public string Titre { get => titre; set => titre = value; }
         public string Periodique { get => periodique; set => periodique = value; }
         public int Id { get => id; set => id = value; }
-
-        public override string toString()
-        {
-            return base.toString() + " " +auteur+" "+titre+" "+periodique;
-        }
+        public DateTime? DateEmprunt { get => dateEmprunt; set => dateEmprunt = value; }
     }
 }

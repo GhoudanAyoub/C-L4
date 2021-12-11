@@ -19,3 +19,17 @@ C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormG
 C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.exe
 C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.pdb
 C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.Form2.resources
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.exe.config
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\Google.Protobuf.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\MySql.Data.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\ZstdNet.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\System.Memory.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\System.Buffers.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\MySql.Data.xml
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.csproj.CopyComplete

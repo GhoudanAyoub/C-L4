@@ -14,15 +14,9 @@ namespace GestionBibFormGhoudan
 {
     public partial class Form1 : Form
     {
-        private BiblioTab biblio;
-        private Employer employer;
-        private client client;
         public Form1()
         {
             InitializeComponent();
-            biblio = new BiblioTab(3);
-            employer = new Employer(biblio);
-            client = new client(biblio,null);
 
         }
 
@@ -33,15 +27,6 @@ namespace GestionBibFormGhoudan
             string titre = textBox2.Text;
             String per = textBox3.Text;
             DateTime date = dateTimePicker1.Value;
-            Livre livre = new Livre(int.Parse(listView1.SelectedItems[0].SubItems[0].Text),auteur, titre, per, date);
-            employer.modifier(livre);
-            ListViewItem ligne = new ListViewItem(livre.Id.ToString());
-            ligne.SubItems.Add(livre.Auteur);
-            ligne.SubItems.Add(livre.Titre);
-            ligne.SubItems.Add(livre.Periodique);
-            ligne.SubItems.Add(livre.DateEmprunt.ToString());
-
-            listView1.Items[listView1.SelectedIndices[0]] = ligne;
 
             Clean();
             button3.Enabled = false;
@@ -51,6 +36,12 @@ namespace GestionBibFormGhoudan
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'f1DataSet.cd' table. You can move, or remove it, as needed.
+            this.cdTableAdapter.Fill(this.f1DataSet.cd);
+            // TODO: This line of code loads data into the 'f1DataSet.periodiques' table. You can move, or remove it, as needed.
+            this.periodiquesTableAdapter.Fill(this.f1DataSet.periodiques);
+            // TODO: This line of code loads data into the 'livres._livres' table. You can move, or remove it, as needed.
+            this.livresTableAdapter.Fill(this.livres._livres);
 
         }
 
@@ -82,15 +73,6 @@ namespace GestionBibFormGhoudan
             string titre = textBox2.Text;
             String per = textBox3.Text;
             DateTime date = dateTimePicker1.Value;
-            Livre livre = new Livre(auteur,titre,per,date);
-            employer.ajouter(livre);
-            ListViewItem ligne = new ListViewItem(livre.Id.ToString());
-            ligne.SubItems.Add(livre.Auteur);
-            ligne.SubItems.Add(livre.Titre);
-            ligne.SubItems.Add(livre.Periodique);
-            ligne.SubItems.Add(livre.DateEmprunt.ToString());
-
-            listView1.Items.Add(ligne);
             Clean();
         }
 
@@ -106,24 +88,9 @@ namespace GestionBibFormGhoudan
             textBox8.Clear();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listView1.SelectedItems.Count > 0)
-            {
-                textBox1.Text = listView1.SelectedItems[0].SubItems[1].Text;
-                textBox2.Text = listView1.SelectedItems[0].SubItems[2].Text;
-                textBox3.Text = listView1.SelectedItems[0].SubItems[3].Text;
-                //dateTimePicker1.Value = DateTime.ParseExact(listView1.SelectedItems[0].SubItems[4].Text, "dd.MM.yyyy", CultureInfo.InvariantCulture);
-                button2.Enabled = true;
-                button1.Enabled = false;
-                button3.Enabled = true;
-            }
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
 
-            listView1.Items[listView1.SelectedIndices[0]].Remove();
             Clean();
             button3.Enabled = false;
             button2.Enabled = false;
@@ -134,17 +101,11 @@ namespace GestionBibFormGhoudan
         private void button4_Click(object sender, EventArgs e)
         {
             LivrePanel.BringToFront();
-            CDPanel.SendToBack();
-            PeriodaquePanel.SendToBack();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            LivrePanel.SendToBack();
-
             CDPanel.BringToFront();
-            PeriodaquePanel.SendToBack();
-
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -154,31 +115,10 @@ namespace GestionBibFormGhoudan
             string titre = textBox5.Text;
             String per = textBox3.Text;
             DateTime date = dateTimePicker1.Value;
-            Cd cd = new Cd(date,auteur, titre); 
-            employer.ajouter(cd);
-            ListViewItem ligne = new ListViewItem(cd.Id.ToString());
-            ligne.SubItems.Add(cd.Auteur);
-            ligne.SubItems.Add(cd.Titre);
-            ligne.SubItems.Add(cd.DateEmprunt.ToString());
-
-            listView2.Items.Add(ligne);
             Clean();
 
         }
 
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listView2.SelectedItems.Count > 0)
-            {
-                textBox4.Text = listView2.SelectedItems[0].SubItems[1].Text;
-                textBox5.Text = listView2.SelectedItems[0].SubItems[2].Text;
-                //dateTimePicker1.Value = DateTime.ParseExact(listView1.SelectedItems[0].SubItems[4].Text, "dd.MM.yyyy", CultureInfo.InvariantCulture);
-                button8.Enabled = true;
-                button7.Enabled = false;
-                button9.Enabled = true;
-            }
-
-        }
 
         private void button8_Click(object sender, EventArgs e)
         {
@@ -186,14 +126,6 @@ namespace GestionBibFormGhoudan
             string titre = textBox5.Text;
             String per = textBox3.Text;
             DateTime date = dateTimePicker1.Value;
-            Cd cd = new Cd(int.Parse(listView2.SelectedItems[0].SubItems[0].Text),date, auteur, titre);
-            employer.modifier(cd);
-            ListViewItem ligne = new ListViewItem(cd.Id.ToString());
-            ligne.SubItems.Add(cd.Auteur);
-            ligne.SubItems.Add(cd.Titre);
-            ligne.SubItems.Add(cd.DateEmprunt.ToString());
-
-            listView2.Items[listView1.SelectedIndices[0]] = ligne;
 
             Clean();
             button8.Enabled = false;
@@ -205,30 +137,14 @@ namespace GestionBibFormGhoudan
         {
 
 
-            listView2.Items[listView2.SelectedIndices[0]].Remove();
             Clean();
             button8.Enabled = false;
             button9.Enabled = false;
             button7.Enabled = true;
         }
 
-        private void listView3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            if (listView3.SelectedItems.Count > 0)
-            {
-                textBox6.Text = listView3.SelectedItems[0].SubItems[0].Text;
-                textBox7.Text = listView3.SelectedItems[0].SubItems[1].Text;
-                textBox8.Text = listView3.SelectedItems[0].SubItems[2].Text;
-                button12.Enabled = true;
-                button11.Enabled = false;
-                button13.Enabled = true;
-            }
-        }
-
         private void button13_Click(object sender, EventArgs e)
         {
-            listView3.Items[listView3.SelectedIndices[0]].Remove();
             Clean();
             button12.Enabled = false;
             button11.Enabled = true;
@@ -242,20 +158,11 @@ namespace GestionBibFormGhoudan
             int num = int.Parse(textBox7.Text);
             String per = textBox8.Text;
             DateTime date = dateTimePicker3.Value;
-            Periodique cd = new Periodique(name, num, per,date);
-            employer.ajouter(cd);
-            ListViewItem ligne = new ListViewItem(cd.Nom);
-            ligne.SubItems.Add(cd.Numero.ToString());
-            ligne.SubItems.Add(cd.Periodicite);
-
-            listView3.Items.Add(ligne);
             Clean();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            LivrePanel.SendToBack();
-            CDPanel.SendToBack();
             PeriodaquePanel.BringToFront();
         }
 
@@ -267,21 +174,23 @@ namespace GestionBibFormGhoudan
             int num = int.Parse(textBox7.Text);
             String per = textBox8.Text;
             DateTime date = dateTimePicker3.Value;
-            Periodique cd = new Periodique(name, num, per, date);
-            employer.ajouter(cd);
-            ListViewItem ligne = new ListViewItem(cd.Nom);
-            ligne.SubItems.Add(cd.Numero.ToString());
-            ligne.SubItems.Add(cd.Periodicite);
-
-            listView3.Items[listView3.SelectedIndices[0]] = ligne;
 
             Clean();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form2().Show();
+            EmpruntPanel.BringToFront();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

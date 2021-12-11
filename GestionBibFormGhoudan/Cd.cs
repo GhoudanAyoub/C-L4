@@ -20,6 +20,12 @@ namespace GestionBiblioGhoudan
             this.titre = titre;
             this.dateEmprunt = dateEmprunt;
         }
+        public Cd(string auteur, string titre, DateTime? dateEmprunt)
+        {
+            this.auteur = auteur;
+            this.titre = titre;
+            this.dateEmprunt = dateEmprunt;
+        }
 
         public int Id { get => id; set => id = value; }
         public string Auteur { get => auteur; set => auteur = value; }

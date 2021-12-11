@@ -36,20 +36,32 @@ namespace GestionBibFormGhoudan
             this.Clear = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button14 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.LivrePanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.auteurDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateempruntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.livresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.livres = new GestionBibFormGhoudan.livres();
             this.CDPanel = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.auteurDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateempruntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.f1DataSet = new GestionBibFormGhoudan.f1DataSet();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -60,6 +72,13 @@ namespace GestionBibFormGhoudan
             this.label8 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.PeriodaquePanel = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodiciteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateempruntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodiquesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
@@ -71,31 +90,10 @@ namespace GestionBibFormGhoudan
             this.label11 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.livres = new GestionBibFormGhoudan.livres();
-            this.livresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.livresTableAdapter = new GestionBibFormGhoudan.livresTableAdapters.livresTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.auteurDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateempruntDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.livresBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.f1DataSet = new GestionBibFormGhoudan.f1DataSet();
-            this.periodiquesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.periodiquesTableAdapter = new GestionBibFormGhoudan.f1DataSetTableAdapters.periodiquesTableAdapter();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.periodiciteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateempruntDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.cdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cdTableAdapter = new GestionBibFormGhoudan.f1DataSetTableAdapters.cdTableAdapter();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.auteurDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateempruntDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button14 = new System.Windows.Forms.Button();
             this.EmpruntPanel = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.button15 = new System.Windows.Forms.Button();
@@ -119,77 +117,89 @@ namespace GestionBibFormGhoudan
             this.label18 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.LivrePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.CDPanel.SuspendLayout();
-            this.PeriodaquePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.livres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.livresBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.f1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.periodiquesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livres)).BeginInit();
+            this.CDPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cdBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.f1DataSet)).BeginInit();
+            this.PeriodaquePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodiquesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livresBindingSource1)).BeginInit();
             this.EmpruntPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(40, 18);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(158, 103);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 40);
             this.button1.TabIndex = 0;
             this.button1.Text = "Ajouter";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(40, 81);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(40, 103);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 40);
             this.button2.TabIndex = 1;
             this.button2.Text = "Modifier";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.button3.Enabled = false;
             this.button3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(40, 145);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(158, 151);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 40);
             this.button3.TabIndex = 2;
             this.button3.Text = "Supprimer";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Clear
             // 
+            this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.Clear.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Clear.Location = new System.Drawing.Point(40, 215);
+            this.Clear.ForeColor = System.Drawing.Color.White;
+            this.Clear.Location = new System.Drawing.Point(40, 151);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(112, 40);
             this.Clear.TabIndex = 3;
             this.Clear.Text = "Clear";
-            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(487, 18);
+            this.textBox1.Location = new System.Drawing.Point(487, 102);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(203, 27);
@@ -199,22 +209,12 @@ namespace GestionBibFormGhoudan
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(487, 81);
+            this.textBox2.Location = new System.Drawing.Point(487, 165);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(203, 27);
             this.textBox2.TabIndex = 5;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(487, 145);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 27);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -229,7 +229,7 @@ namespace GestionBibFormGhoudan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(339, 18);
+            this.label1.Location = new System.Drawing.Point(339, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 8;
@@ -239,27 +239,18 @@ namespace GestionBibFormGhoudan
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(343, 81);
+            this.label2.Location = new System.Drawing.Point(339, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Titre";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(343, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Periodique";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(343, 215);
+            this.label4.Location = new System.Drawing.Point(339, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 20);
             this.label4.TabIndex = 11;
@@ -276,6 +267,16 @@ namespace GestionBibFormGhoudan
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 656);
             this.panel1.TabIndex = 13;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(7, 609);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(136, 41);
+            this.button14.TabIndex = 4;
+            this.button14.Text = "Deconnecter";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button10
             // 
@@ -319,19 +320,19 @@ namespace GestionBibFormGhoudan
             // 
             // LivrePanel
             // 
+            this.LivrePanel.Controls.Add(this.label20);
+            this.LivrePanel.Controls.Add(this.label3);
             this.LivrePanel.Controls.Add(this.dataGridView1);
             this.LivrePanel.Controls.Add(this.dateTimePicker1);
             this.LivrePanel.Controls.Add(this.button1);
             this.LivrePanel.Controls.Add(this.button2);
             this.LivrePanel.Controls.Add(this.label4);
             this.LivrePanel.Controls.Add(this.button3);
-            this.LivrePanel.Controls.Add(this.label3);
             this.LivrePanel.Controls.Add(this.Clear);
             this.LivrePanel.Controls.Add(this.label2);
             this.LivrePanel.Controls.Add(this.textBox1);
             this.LivrePanel.Controls.Add(this.label1);
             this.LivrePanel.Controls.Add(this.textBox2);
-            this.LivrePanel.Controls.Add(this.textBox3);
             this.LivrePanel.Location = new System.Drawing.Point(200, 8);
             this.LivrePanel.Name = "LivrePanel";
             this.LivrePanel.Size = new System.Drawing.Size(864, 656);
@@ -353,9 +354,54 @@ namespace GestionBibFormGhoudan
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(780, 340);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // auteurDataGridViewTextBoxColumn
+            // 
+            this.auteurDataGridViewTextBoxColumn.DataPropertyName = "auteur";
+            this.auteurDataGridViewTextBoxColumn.HeaderText = "auteur";
+            this.auteurDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.auteurDataGridViewTextBoxColumn.Name = "auteurDataGridViewTextBoxColumn";
+            this.auteurDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // titreDataGridViewTextBoxColumn
+            // 
+            this.titreDataGridViewTextBoxColumn.DataPropertyName = "titre";
+            this.titreDataGridViewTextBoxColumn.HeaderText = "titre";
+            this.titreDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.titreDataGridViewTextBoxColumn.Name = "titreDataGridViewTextBoxColumn";
+            this.titreDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // dateempruntDataGridViewTextBoxColumn
+            // 
+            this.dateempruntDataGridViewTextBoxColumn.DataPropertyName = "date_emprunt";
+            this.dateempruntDataGridViewTextBoxColumn.HeaderText = "date_emprunt";
+            this.dateempruntDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateempruntDataGridViewTextBoxColumn.Name = "dateempruntDataGridViewTextBoxColumn";
+            this.dateempruntDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // livresBindingSource
+            // 
+            this.livresBindingSource.DataMember = "livres";
+            this.livresBindingSource.DataSource = this.livres;
+            // 
+            // livres
+            // 
+            this.livres.DataSetName = "livres";
+            this.livres.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CDPanel
             // 
+            this.CDPanel.Controls.Add(this.label21);
+            this.CDPanel.Controls.Add(this.label22);
             this.CDPanel.Controls.Add(this.dataGridView3);
             this.CDPanel.Controls.Add(this.dateTimePicker2);
             this.CDPanel.Controls.Add(this.button7);
@@ -371,6 +417,66 @@ namespace GestionBibFormGhoudan
             this.CDPanel.Size = new System.Drawing.Size(864, 656);
             this.CDPanel.TabIndex = 15;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.auteurDataGridViewTextBoxColumn1,
+            this.titreDataGridViewTextBoxColumn1,
+            this.dateempruntDataGridViewTextBoxColumn2});
+            this.dataGridView3.DataSource = this.cdBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(18, 251);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(780, 362);
+            this.dataGridView3.TabIndex = 24;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn2
+            // 
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // auteurDataGridViewTextBoxColumn1
+            // 
+            this.auteurDataGridViewTextBoxColumn1.DataPropertyName = "auteur";
+            this.auteurDataGridViewTextBoxColumn1.HeaderText = "auteur";
+            this.auteurDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.auteurDataGridViewTextBoxColumn1.Name = "auteurDataGridViewTextBoxColumn1";
+            this.auteurDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // titreDataGridViewTextBoxColumn1
+            // 
+            this.titreDataGridViewTextBoxColumn1.DataPropertyName = "titre";
+            this.titreDataGridViewTextBoxColumn1.HeaderText = "titre";
+            this.titreDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.titreDataGridViewTextBoxColumn1.Name = "titreDataGridViewTextBoxColumn1";
+            this.titreDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dateempruntDataGridViewTextBoxColumn2
+            // 
+            this.dateempruntDataGridViewTextBoxColumn2.DataPropertyName = "date_emprunt";
+            this.dateempruntDataGridViewTextBoxColumn2.HeaderText = "date_emprunt";
+            this.dateempruntDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dateempruntDataGridViewTextBoxColumn2.Name = "dateempruntDataGridViewTextBoxColumn2";
+            this.dateempruntDataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // cdBindingSource
+            // 
+            this.cdBindingSource.DataMember = "cd";
+            this.cdBindingSource.DataSource = this.f1DataSet;
+            // 
+            // f1DataSet
+            // 
+            this.f1DataSet.DataSetName = "f1DataSet";
+            this.f1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -382,27 +488,31 @@ namespace GestionBibFormGhoudan
             // 
             // button7
             // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button7.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(18, 36);
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(34, 89);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(112, 40);
+            this.button7.Size = new System.Drawing.Size(230, 40);
             this.button7.TabIndex = 12;
             this.button7.Text = "Ajouter";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button8.Enabled = false;
             this.button8.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(18, 99);
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(152, 137);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(112, 40);
             this.button8.TabIndex = 13;
             this.button8.Text = "Modifier";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label5
@@ -417,15 +527,17 @@ namespace GestionBibFormGhoudan
             // 
             // button9
             // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.button9.Enabled = false;
             this.button9.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(18, 163);
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(34, 137);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(112, 40);
             this.button9.TabIndex = 14;
             this.button9.Text = "Supprimer";
-            this.button9.UseVisualStyleBackColor = true;
+            this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label7
@@ -484,6 +596,69 @@ namespace GestionBibFormGhoudan
             this.PeriodaquePanel.Name = "PeriodaquePanel";
             this.PeriodaquePanel.Size = new System.Drawing.Size(864, 656);
             this.PeriodaquePanel.TabIndex = 16;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.nomDataGridViewTextBoxColumn,
+            this.periodiciteDataGridViewTextBoxColumn,
+            this.numeroDataGridViewTextBoxColumn,
+            this.dateempruntDataGridViewTextBoxColumn1});
+            this.dataGridView2.DataSource = this.periodiquesBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(40, 294);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(684, 340);
+            this.dataGridView2.TabIndex = 15;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
+            this.nomDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // periodiciteDataGridViewTextBoxColumn
+            // 
+            this.periodiciteDataGridViewTextBoxColumn.DataPropertyName = "periodicite";
+            this.periodiciteDataGridViewTextBoxColumn.HeaderText = "periodicite";
+            this.periodiciteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.periodiciteDataGridViewTextBoxColumn.Name = "periodiciteDataGridViewTextBoxColumn";
+            this.periodiciteDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "numero";
+            this.numeroDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateempruntDataGridViewTextBoxColumn1
+            // 
+            this.dateempruntDataGridViewTextBoxColumn1.DataPropertyName = "date_emprunt";
+            this.dateempruntDataGridViewTextBoxColumn1.HeaderText = "date_emprunt";
+            this.dateempruntDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dateempruntDataGridViewTextBoxColumn1.Name = "dateempruntDataGridViewTextBoxColumn1";
+            this.dateempruntDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // periodiquesBindingSource
+            // 
+            this.periodiquesBindingSource.DataMember = "periodiques";
+            this.periodiquesBindingSource.DataSource = this.f1DataSet;
             // 
             // dateTimePicker3
             // 
@@ -599,196 +774,22 @@ namespace GestionBibFormGhoudan
             this.textBox8.Size = new System.Drawing.Size(203, 27);
             this.textBox8.TabIndex = 6;
             // 
-            // livres
-            // 
-            this.livres.DataSetName = "livres";
-            this.livres.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // livresBindingSource
-            // 
-            this.livresBindingSource.DataMember = "livres";
-            this.livresBindingSource.DataSource = this.livres;
-            // 
             // livresTableAdapter
             // 
             this.livresTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // auteurDataGridViewTextBoxColumn
-            // 
-            this.auteurDataGridViewTextBoxColumn.DataPropertyName = "auteur";
-            this.auteurDataGridViewTextBoxColumn.HeaderText = "auteur";
-            this.auteurDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.auteurDataGridViewTextBoxColumn.Name = "auteurDataGridViewTextBoxColumn";
-            this.auteurDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // titreDataGridViewTextBoxColumn
-            // 
-            this.titreDataGridViewTextBoxColumn.DataPropertyName = "titre";
-            this.titreDataGridViewTextBoxColumn.HeaderText = "titre";
-            this.titreDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.titreDataGridViewTextBoxColumn.Name = "titreDataGridViewTextBoxColumn";
-            this.titreDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // dateempruntDataGridViewTextBoxColumn
-            // 
-            this.dateempruntDataGridViewTextBoxColumn.DataPropertyName = "date_emprunt";
-            this.dateempruntDataGridViewTextBoxColumn.HeaderText = "date_emprunt";
-            this.dateempruntDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateempruntDataGridViewTextBoxColumn.Name = "dateempruntDataGridViewTextBoxColumn";
-            this.dateempruntDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.nomDataGridViewTextBoxColumn,
-            this.periodiciteDataGridViewTextBoxColumn,
-            this.numeroDataGridViewTextBoxColumn,
-            this.dateempruntDataGridViewTextBoxColumn1});
-            this.dataGridView2.DataSource = this.periodiquesBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(40, 294);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(684, 340);
-            this.dataGridView2.TabIndex = 15;
             // 
             // livresBindingSource1
             // 
             this.livresBindingSource1.DataMember = "livres";
             this.livresBindingSource1.DataSource = this.livres;
             // 
-            // f1DataSet
-            // 
-            this.f1DataSet.DataSetName = "f1DataSet";
-            this.f1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // periodiquesBindingSource
-            // 
-            this.periodiquesBindingSource.DataMember = "periodiques";
-            this.periodiquesBindingSource.DataSource = this.f1DataSet;
-            // 
             // periodiquesTableAdapter
             // 
             this.periodiquesTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // periodiciteDataGridViewTextBoxColumn
-            // 
-            this.periodiciteDataGridViewTextBoxColumn.DataPropertyName = "periodicite";
-            this.periodiciteDataGridViewTextBoxColumn.HeaderText = "periodicite";
-            this.periodiciteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.periodiciteDataGridViewTextBoxColumn.Name = "periodiciteDataGridViewTextBoxColumn";
-            this.periodiciteDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "numero";
-            this.numeroDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            this.numeroDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dateempruntDataGridViewTextBoxColumn1
-            // 
-            this.dateempruntDataGridViewTextBoxColumn1.DataPropertyName = "date_emprunt";
-            this.dateempruntDataGridViewTextBoxColumn1.HeaderText = "date_emprunt";
-            this.dateempruntDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dateempruntDataGridViewTextBoxColumn1.Name = "dateempruntDataGridViewTextBoxColumn1";
-            this.dateempruntDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.auteurDataGridViewTextBoxColumn1,
-            this.titreDataGridViewTextBoxColumn1,
-            this.dateempruntDataGridViewTextBoxColumn2});
-            this.dataGridView3.DataSource = this.cdBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(18, 251);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(780, 362);
-            this.dataGridView3.TabIndex = 24;
-            // 
-            // cdBindingSource
-            // 
-            this.cdBindingSource.DataMember = "cd";
-            this.cdBindingSource.DataSource = this.f1DataSet;
-            // 
             // cdTableAdapter
             // 
             this.cdTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // auteurDataGridViewTextBoxColumn1
-            // 
-            this.auteurDataGridViewTextBoxColumn1.DataPropertyName = "auteur";
-            this.auteurDataGridViewTextBoxColumn1.HeaderText = "auteur";
-            this.auteurDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.auteurDataGridViewTextBoxColumn1.Name = "auteurDataGridViewTextBoxColumn1";
-            this.auteurDataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // titreDataGridViewTextBoxColumn1
-            // 
-            this.titreDataGridViewTextBoxColumn1.DataPropertyName = "titre";
-            this.titreDataGridViewTextBoxColumn1.HeaderText = "titre";
-            this.titreDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.titreDataGridViewTextBoxColumn1.Name = "titreDataGridViewTextBoxColumn1";
-            this.titreDataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // dateempruntDataGridViewTextBoxColumn2
-            // 
-            this.dateempruntDataGridViewTextBoxColumn2.DataPropertyName = "date_emprunt";
-            this.dateempruntDataGridViewTextBoxColumn2.HeaderText = "date_emprunt";
-            this.dateempruntDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dateempruntDataGridViewTextBoxColumn2.Name = "dateempruntDataGridViewTextBoxColumn2";
-            this.dateempruntDataGridViewTextBoxColumn2.Width = 200;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(7, 609);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(136, 41);
-            this.button14.TabIndex = 4;
-            this.button14.Text = "Deconnecter";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // EmpruntPanel
             // 
@@ -1086,16 +1087,65 @@ namespace GestionBibFormGhoudan
             this.label19.TabIndex = 111;
             this.label19.Text = "Nom";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Green;
+            this.label3.Location = new System.Drawing.Point(34, 27);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(255, 36);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Gestion des livres";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.Color.Green;
+            this.label20.Location = new System.Drawing.Point(41, 255);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(152, 26);
+            this.label20.TabIndex = 45;
+            this.label20.Text = "Liste des livres";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.Color.Green;
+            this.label21.Location = new System.Drawing.Point(15, 213);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(127, 26);
+            this.label21.TabIndex = 47;
+            this.label21.Text = "Liste des Cd";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Green;
+            this.label22.Location = new System.Drawing.Point(14, 27);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(219, 36);
+            this.label22.TabIndex = 46;
+            this.label22.Text = "Gestion des Cd";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1840, 752);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.CDPanel);
             this.Controls.Add(this.EmpruntPanel);
             this.Controls.Add(this.PeriodaquePanel);
             this.Controls.Add(this.LivrePanel);
-            this.Controls.Add(this.CDPanel);
-            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
@@ -1105,18 +1155,18 @@ namespace GestionBibFormGhoudan
             this.LivrePanel.ResumeLayout(false);
             this.LivrePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livres)).EndInit();
             this.CDPanel.ResumeLayout(false);
             this.CDPanel.PerformLayout();
-            this.PeriodaquePanel.ResumeLayout(false);
-            this.PeriodaquePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.livres)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.livresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.livresBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.f1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.periodiquesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cdBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.f1DataSet)).EndInit();
+            this.PeriodaquePanel.ResumeLayout(false);
+            this.PeriodaquePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.periodiquesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livresBindingSource1)).EndInit();
             this.EmpruntPanel.ResumeLayout(false);
             this.EmpruntPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
@@ -1132,11 +1182,9 @@ namespace GestionBibFormGhoudan
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel LivrePanel;
@@ -1215,6 +1263,10 @@ namespace GestionBibFormGhoudan
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
     }
 }
 

@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Biblioteque.cs" />
     <Compile Include="Cd.cs" />
+    <Compile Include="Db\Connection.cs" />
     <Compile Include="emprunt.cs" />
     <Compile Include="f1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>

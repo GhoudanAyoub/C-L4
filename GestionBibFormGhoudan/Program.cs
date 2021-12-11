@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionBibFormGhoudan.Db;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,10 @@ namespace GestionBibFormGhoudan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            if (Connection.getSqlConnection() != null)
+                Application.Run(new Form1());
+            else
+                Console.WriteLine("Error Database");
         }
     }
 }

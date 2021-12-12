@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GestionBibFormGhoudan.Db;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,12 +27,17 @@ namespace GestionBibFormGhoudan
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            string sqlSelectAll = "SELECT COUNT(*) FROM user WHERE username='" + textBox1.Text + "' AND password='" + textBox2.Text + "'";
 
-            if (textBox1.Text == "admin" && textBox2.Text == "admin")
-            {
-                Form1 a = new Form1();
-                this.Hide();
-                a.Show();
+            MySqlCommand cmd = Connection.getMySqlCommand();
+            cmd.CommandText = sqlSelectAll;
+            MyDA.SelectCommand = cmd;
+            DataTable table = new DataTable();
+            MyDA.Fill(table);
+            if (table.Rows[0][0].ToString() == "1")
+            {this.Hide();
+                new Form1().Show();
             }
             else
             {

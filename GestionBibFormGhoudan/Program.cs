@@ -18,7 +18,7 @@ namespace GestionBibFormGhoudan
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             if (Connection.getSqlConnection() != null)
-                Application.Run(new Form1());
+                Application.Run(new Form2());
             else
                 Console.WriteLine("Error Database");
         }

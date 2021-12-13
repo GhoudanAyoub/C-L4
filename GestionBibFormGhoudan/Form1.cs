@@ -422,8 +422,7 @@ namespace GestionBibFormGhoudan
 
         private void button14_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Form2().Show();
+            this.Close();
         }
 
         private void button22_Click(object sender, EventArgs e)

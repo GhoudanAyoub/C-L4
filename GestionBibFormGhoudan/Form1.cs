@@ -1,4 +1,5 @@
 ﻿using GestionBibFormGhoudan.Db;
+using GestionBibFormGhoudan.Services;
 using GestionBiblioGhoudan;
 using MySql.Data.MySqlClient;
 using System;
@@ -19,6 +20,10 @@ namespace GestionBibFormGhoudan
         private int currRowIndex;
 
         DataTable dataTable = new DataTable();
+        private LivreService livreService = new LivreService();
+        private CdService cdService = new CdService();
+        private PeriodiqueService periodiqueService = new PeriodiqueService();
+        private EmpruntService empruntService = new EmpruntService();
         public Form1()
         {
             InitializeComponent();
@@ -36,17 +41,7 @@ namespace GestionBibFormGhoudan
             }
             else
             {
-
-                MySqlCommand cmd = Connection.getMySqlCommand();
-
-                cmd.CommandText = "UPDATE livres SET auteur= @auteur, titre=@titre, date_emprunt=@date_emprunt" +
-                        " WHERE id=" + currRowIndex;;
-                    cmd.Parameters.AddWithValue("@titre", textBox2.Text);
-                    cmd.Parameters.AddWithValue("@auteur", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@date_emprunt", dateTimePicker1.Value);
-
-
-                    cmd.ExecuteNonQuery();
+                livreService.Modifier(new Livre(currRowIndex, textBox2.Text, textBox1.Text, int.Parse(textBox33.Text)));
 
             Clean();
                 refrechLivre();
@@ -78,17 +73,14 @@ namespace GestionBibFormGhoudan
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'f1DataSet.emprunteurs' table. You can move, or remove it, as needed.
-            this.emprunteursTableAdapter.Fill(this.f1DataSet.emprunteurs);
-            // TODO: This line of code loads data into the 'f1DataSet.user' table. You can move, or remove it, as needed.
-            this.userTableAdapter.Fill(this.f1DataSet.user);
-            // TODO: This line of code loads data into the 'f1DataSet.cd' table. You can move, or remove it, as needed.
-            this.cdTableAdapter.Fill(this.f1DataSet.cd);
-            // TODO: This line of code loads data into the 'f1DataSet.periodiques' table. You can move, or remove it, as needed.
-            this.periodiquesTableAdapter.Fill(this.f1DataSet.periodiques);
-            // TODO: This line of code loads data into the 'livres._livres' table. You can move, or remove it, as needed.
-            this.livresTableAdapter.Fill(this.livres._livres);
-
+            // TODO: This line of code loads data into the 'f1DataSet1.periodiques' table. You can move, or remove it, as needed.
+            this.periodiquesTableAdapter1.Fill(this.f1DataSet1.periodiques);
+            // TODO: This line of code loads data into the 'f1DataSet1.emprunteurs' table. You can move, or remove it, as needed.
+            this.emprunteursTableAdapter1.Fill(this.f1DataSet1.emprunteurs);
+            // TODO: This line of code loads data into the 'f1DataSet1.cd' table. You can move, or remove it, as needed.
+            this.cdTableAdapter1.Fill(this.f1DataSet1.cd);
+            // TODO: This line of code loads data into the 'f1DataSet1.livres' table. You can move, or remove it, as needed.
+            this.livresTableAdapter1.Fill(this.f1DataSet1.livres);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -121,21 +113,9 @@ namespace GestionBibFormGhoudan
             }
             else
             {
-                DateTime date = dateTimePicker1.Value;
-                Livre L = new Livre(textBox1.Text, textBox2.Text, dateTimePicker1.Value);
-                //dataGridView2.Rows.Add("", textBox1.Text, textBox2.Text,dateTimePicker1.Text );
 
-
-
-                MySqlCommand cmd = Connection.getMySqlCommand();
-                cmd.CommandText = "INSERT INTO livres (auteur, titre,date_emprunt)" +
-                    "VALUES(@auteur, @titre,@date_emprunt)";
-                cmd.Parameters.AddWithValue("@auteur", L.Auteur);
-                cmd.Parameters.AddWithValue("@titre", L.Titre);
-                cmd.Parameters.AddWithValue("@date_emprunt", L.DateEmprunt);
-                cmd.ExecuteNonQuery();
+                livreService.Ajouter(new Livre(textBox1.Text, textBox2.Text, int.Parse(textBox33.Text)));
                 Clean();
-
                 refrechLivre();
             }
         }
@@ -151,7 +131,6 @@ namespace GestionBibFormGhoudan
             textBox8.Clear();
             textBox9.Clear();
             textBox10.Clear();
-            textBox11.Clear();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -163,9 +142,7 @@ namespace GestionBibFormGhoudan
             if (dialogDelete == DialogResult.OK)
             {
                 dataGridView1.Rows.RemoveAt(rowIndex);
-                MySqlCommand cmd = Connection.getMySqlCommand();
-                cmd.CommandText = "DELETE FROM livres WHERE id=" + currRowIndex;
-                cmd.ExecuteNonQuery();
+                livreService.delete(currRowIndex);
 
             }
             Clean();
@@ -195,16 +172,8 @@ namespace GestionBibFormGhoudan
             }
             else
             {
-                Cd L = new Cd(textBox4.Text, textBox5.Text, dateTimePicker2.Value);
-
-
-                MySqlCommand cmd = Connection.getMySqlCommand();
-                cmd.CommandText = "INSERT INTO cd (auteur, titre,date_emprunt)" +
-                    "VALUES(@auteur, @titre,@date_emprunt)";
-                cmd.Parameters.AddWithValue("@auteur", L.Auteur);
-                cmd.Parameters.AddWithValue("@titre", L.Titre);
-                cmd.Parameters.AddWithValue("@date_emprunt", L.DateEmprunt);
-                cmd.ExecuteNonQuery();
+                Cd L = new Cd(textBox4.Text, textBox5.Text, int.Parse(textBox3.Text));
+                cdService.Ajouter(L);
                 Clean();
 
                 refrechCd();
@@ -224,19 +193,9 @@ namespace GestionBibFormGhoudan
             else
             {
 
-                MySqlCommand cmd = Connection.getMySqlCommand();
-
-                cmd.CommandText = "UPDATE cd SET auteur= @auteur, titre=@titre, date_emprunt=@date_emprunt" +
-                        " WHERE id=" + currRowIndex; ;
-                cmd.Parameters.AddWithValue("@titre", textBox4.Text);
-                cmd.Parameters.AddWithValue("@auteur", textBox5.Text);
-                cmd.Parameters.AddWithValue("@date_emprunt", dateTimePicker2.Value);
-
-
-                cmd.ExecuteNonQuery();
+                Cd L = new Cd(currRowIndex,textBox4.Text, textBox5.Text, int.Parse(textBox3.Text));
+                cdService.Modifier(L);
                 Clean();
-
-
                 refrechCd();
                 button8.Enabled = false;
                 button9.Enabled = false;
@@ -246,61 +205,20 @@ namespace GestionBibFormGhoudan
 
         private void refrechCd()
         {
-            MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            string sqlSelectAll = "SELECT * from cd";
-
-            MySqlCommand cmd = Connection.getMySqlCommand();
-            cmd.CommandText = sqlSelectAll;
-            MyDA.SelectCommand = cmd;
-
-            DataTable table = new DataTable();
-            MyDA.Fill(table);
-
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
-
-
-            dataGridView3.DataSource = bSource;
+            dataGridView3.DataSource = cdService.afficher();
             dataGridView3.Update();
             dataGridView3.Refresh();
         }
         private void refrechPer()
         {
-            MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            string sqlSelectAll = "SELECT * from periodiques";
-
-            MySqlCommand cmd = Connection.getMySqlCommand();
-            cmd.CommandText = sqlSelectAll;
-            MyDA.SelectCommand = cmd;
-
-            DataTable table = new DataTable();
-            MyDA.Fill(table);
-
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
-
-
-            dataGridView2.DataSource = bSource;
+            dataGridView2.DataSource = periodiqueService.afficher();
             dataGridView2.Update();
             dataGridView2.Refresh();
         }
         private void refrechEmp()
         {
-            MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            string sqlSelectAll = "SELECT * from emprunteurs";
 
-            MySqlCommand cmd = Connection.getMySqlCommand();
-            cmd.CommandText = sqlSelectAll;
-            MyDA.SelectCommand = cmd;
-
-            DataTable table = new DataTable();
-            MyDA.Fill(table);
-
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
-
-
-            dataGridView4.DataSource = bSource;
+            dataGridView4.DataSource = empruntService.afficher();
             dataGridView4.Update();
             dataGridView4.Refresh();
         }
@@ -314,10 +232,7 @@ namespace GestionBibFormGhoudan
             if (dialogDelete == DialogResult.OK)
             {
                 dataGridView3.Rows.RemoveAt(rowIndex);
-                MySqlCommand cmd = Connection.getMySqlCommand();
-                cmd.CommandText = "DELETE FROM cd WHERE id=" + currRowIndex;
-                cmd.ExecuteNonQuery();
-
+                cdService.delete(currRowIndex);
             }
 
             Clean();
@@ -334,9 +249,7 @@ namespace GestionBibFormGhoudan
             if (dialogDelete == DialogResult.OK)
             {
                 dataGridView2.Rows.RemoveAt(rowIndex);
-                MySqlCommand cmd = Connection.getMySqlCommand();
-                cmd.CommandText = "DELETE FROM periodiques WHERE id=" + currRowIndex;
-                cmd.ExecuteNonQuery();
+                periodiqueService.delete(currRowIndex);
 
             }
 
@@ -357,19 +270,8 @@ namespace GestionBibFormGhoudan
             }
             else
             {
-                Cd L = new Cd(textBox4.Text, textBox5.Text, dateTimePicker2.Value);
-
-
-                MySqlCommand cmd = Connection.getMySqlCommand();
-                cmd.CommandText = "INSERT INTO periodiques (nom, periodicite,numero,date_emprunt)" +
-                    "VALUES(@nom, @per,@n,@date_emprunt)";
-                cmd.Parameters.AddWithValue("@nom", textBox6.Text);
-                cmd.Parameters.AddWithValue("@per", textBox7.Text);
-                cmd.Parameters.AddWithValue("@n", textBox8.Text);
-                cmd.Parameters.AddWithValue("@date_emprunt", dateTimePicker3.Value);
-
-
-                cmd.ExecuteNonQuery();
+                Periodique periodique = new Periodique( textBox6.Text, int.Parse(textBox7.Text), textBox8.Text, int.Parse(textBox12.Text));
+                periodiqueService.Ajouter(periodique);
                 Clean();
                 refrechPer();
             }
@@ -392,18 +294,8 @@ namespace GestionBibFormGhoudan
             }
             else
             {
-
-                MySqlCommand cmd = Connection.getMySqlCommand();
-
-                cmd.CommandText = "UPDATE periodiques SET nom=@nom, periodicite=@per, numero=@n,date_emprunt=@date_emprunt" +
-                        " WHERE id=" + currRowIndex;
-                cmd.Parameters.AddWithValue("@nom", textBox6.Text);
-                cmd.Parameters.AddWithValue("@per", textBox7.Text);
-                cmd.Parameters.AddWithValue("@n", textBox8.Text);
-                cmd.Parameters.AddWithValue("@date_emprunt", dateTimePicker3.Value);
-
-
-                cmd.ExecuteNonQuery();
+                Periodique periodique = new Periodique(currRowIndex, textBox6.Text, int.Parse(textBox8.Text),textBox7.Text,int.Parse(textBox12.Text));
+                periodiqueService.Modifier(periodique);
                 Clean();
 
 
@@ -429,25 +321,14 @@ namespace GestionBibFormGhoudan
         {
 
 
-            if (textBox9.Text == "" || textBox10.Text == "" || textBox11.Text == "")
+            if (textBox9.Text == "" || textBox10.Text == "" )
             {
                 DialogResult dialogClose = MessageBox.Show("Field Empty", "*", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-
-                MySqlCommand cmd = Connection.getMySqlCommand();
-                cmd.CommandText = "INSERT INTO emprunteurs (name, cin,date_emprunt,delai,type_ouvrage)" +
-                    "VALUES(@nom, @cin,@date_emprunt,@delai,@type_ouvrage)";
-                cmd.Parameters.AddWithValue("@nom", textBox11.Text);
-                cmd.Parameters.AddWithValue("@cin", textBox10.Text);
-                cmd.Parameters.AddWithValue("@delai", dateTimePicker5.Value);
-                cmd.Parameters.AddWithValue("@type_ouvrage", textBox9.Text);
-                cmd.Parameters.AddWithValue("@date_emprunt", dateTimePicker4.Value);
-
-
-                cmd.ExecuteNonQuery();
+                empruntService.Ajouter(new emprunt(textBox10.Text, textBox10.Text, dateTimePicker5.Value, dateTimePicker4.Value, textBox9.Text, textBox11.Text));
                 Clean();
                 refrechEmp();
             }
@@ -463,68 +344,9 @@ namespace GestionBibFormGhoudan
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            button1.Enabled = false;
-
-            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-            currRowIndex = Convert.ToInt32(row.Cells[0].Value);
-            textBox1.Text = row.Cells[1].Value.ToString();
-            textBox2.Text = row.Cells[2].Value.ToString();
-            dateTimePicker1.Value = Convert.ToDateTime(row.Cells[3].Value);
-
-            button2.Enabled = true;
-            button3.Enabled = true;
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            DataGridViewRow row = this.dataGridView3.Rows[e.RowIndex];
-            currRowIndex = Convert.ToInt32(row.Cells[0].Value);
-            textBox4.Text = row.Cells[1].Value.ToString();
-            textBox5.Text = row.Cells[2].Value.ToString();
-            dateTimePicker2.Value = Convert.ToDateTime(row.Cells[3].Value);
-
-            button8.Enabled = true;
-            button9.Enabled = true;
-            button7.Enabled = false;
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
-            currRowIndex = Convert.ToInt32(row.Cells[0].Value);
-            textBox6.Text = row.Cells[1].Value.ToString();
-            textBox7.Text = row.Cells[2].Value.ToString();
-            textBox8.Text = row.Cells[3].Value.ToString();
-            dateTimePicker3.Value = Convert.ToDateTime(row.Cells[4].Value);
-
-            button13.Enabled = true;
-            button12.Enabled = true;
-            button11.Enabled = false;
-        }
-
         private void button21_Click(object sender, EventArgs e)
         {
             Clean();
-        }
-
-        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            DataGridViewRow row = this.dataGridView4.Rows[e.RowIndex];
-            currRowIndex = Convert.ToInt32(row.Cells[0].Value);
-            textBox10.Text = row.Cells[1].Value.ToString();
-            textBox11.Text = row.Cells[2].Value.ToString();
-            textBox9.Text = row.Cells[5].Value.ToString();
-            dateTimePicker5.Value = Convert.ToDateTime(row.Cells[4].Value);
-            dateTimePicker4.Value = Convert.ToDateTime(row.Cells[3].Value);
-
-            button20.Enabled = true;
-            button19.Enabled = true;
-            button22.Enabled = false;
         }
 
         private void button20_Click(object sender, EventArgs e)
@@ -536,9 +358,7 @@ namespace GestionBibFormGhoudan
             if (dialogDelete == DialogResult.OK)
             {
                 dataGridView4.Rows.RemoveAt(rowIndex);
-                MySqlCommand cmd = Connection.getMySqlCommand();
-                cmd.CommandText = "DELETE FROM emprunteurs WHERE id=" + currRowIndex;
-                cmd.ExecuteNonQuery();
+                empruntService.delete(currRowIndex);
 
             }
 
@@ -552,25 +372,14 @@ namespace GestionBibFormGhoudan
         {
 
 
-            if (textBox9.Text == "" || textBox10.Text == "" || textBox11.Text == "")
+            if (textBox9.Text == "" || textBox10.Text == "")
             {
                 DialogResult dialogClose = MessageBox.Show("Field Empty", "*", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-
-                MySqlCommand cmd = Connection.getMySqlCommand();
-                cmd.CommandText = "UPDATE emprunteurs SET name=@nom, cin=@cin,delai=@delai,type_ouvrage=@type_ouvrage,date_emprunt=@date_emprunt" +
-                        " WHERE id=" + currRowIndex;
-                cmd.Parameters.AddWithValue("@nom", textBox11.Text);
-                cmd.Parameters.AddWithValue("@cin", textBox10.Text);
-                cmd.Parameters.AddWithValue("@delai", dateTimePicker5.Value);
-                cmd.Parameters.AddWithValue("@date_emprunt", dateTimePicker4.Value);
-                cmd.Parameters.AddWithValue("@type_ouvrage", textBox9.Text);
-
-
-                cmd.ExecuteNonQuery();
+                empruntService.Modifier(new emprunt(currRowIndex, textBox10.Text, textBox10.Text, dateTimePicker5.Value, dateTimePicker4.Value, textBox11.Text, textBox9.Text));
                 Clean();
                 refrechEmp();
                 button20.Enabled = false;
@@ -599,6 +408,87 @@ namespace GestionBibFormGhoudan
         {
 
             textBox9.Text = "Periodique";
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            DataGridViewRow row = this.dataGridView4.Rows[e.RowIndex];
+            currRowIndex = Convert.ToInt32(row.Cells[0].Value);
+            textBox10.Text = row.Cells[1].Value.ToString();
+            textBox9.Text = row.Cells[5].Value.ToString();
+            textBox11.Text = row.Cells[6].Value.ToString();
+            dateTimePicker5.Value = Convert.ToDateTime(row.Cells[4].Value);
+            dateTimePicker4.Value = Convert.ToDateTime(row.Cells[3].Value);
+
+            button20.Enabled = true;
+            button19.Enabled = true;
+            button22.Enabled = false;
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
+            currRowIndex = Convert.ToInt32(row.Cells[0].Value);
+            textBox6.Text = row.Cells[1].Value.ToString();
+            textBox7.Text = row.Cells[2].Value.ToString();
+            textBox8.Text = row.Cells[3].Value.ToString();
+            textBox12.Text = row.Cells[4].Value.ToString();
+
+            button13.Enabled = true;
+            button12.Enabled = true;
+            button11.Enabled = false;
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            button1.Enabled = false;
+
+            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            currRowIndex = Convert.ToInt32(row.Cells[0].Value);
+            textBox1.Text = row.Cells[1].Value.ToString();
+            textBox2.Text = row.Cells[2].Value.ToString();
+            textBox33.Text = row.Cells[3].Value.ToString();
+
+            button2.Enabled = true;
+            button3.Enabled = true;
+        }
+
+        private void dataGridView3_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            DataGridViewRow row = this.dataGridView3.Rows[e.RowIndex];
+            currRowIndex = Convert.ToInt32(row.Cells[0].Value);
+            textBox4.Text = row.Cells[1].Value.ToString();
+            textBox5.Text = row.Cells[2].Value.ToString();
+            textBox3.Text = row.Cells[3].Value.ToString();
+
+            button8.Enabled = true;
+            button9.Enabled = true;
+            button7.Enabled = false;
         }
     }
 }

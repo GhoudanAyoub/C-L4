@@ -21,7 +21,6 @@ namespace GestionBibFormGhoudan
         
         private void Form2_Load(object sender, EventArgs e)
         {
-            this.emprunteursTableAdapter.Fill(this.f1DataSet.emprunteurs);
 
         }
 

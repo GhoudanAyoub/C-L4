@@ -1,15 +1,18 @@
-﻿using GestionBiblioGhoudan;
+﻿using GestionBibFormGhoudan.Db;
+using GestionBiblioGhoudan;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GestionBibFormGhoudan.Services
 {
     class LivreService : Biblioteque<Livre>
     {
-        public override List<Livre> afficher()
+        public override BindingSource afficher()
         {
             throw new NotImplementedException();
         }
@@ -21,17 +24,34 @@ namespace GestionBibFormGhoudan.Services
 
         public override bool Ajouter(Livre o)
         {
-            throw new NotImplementedException();
+            MySqlCommand cmd = Connection.getMySqlCommand();
+            cmd.CommandText = "INSERT INTO livres (auteur, titre,cota)" +
+                "VALUES(@auteur, @titre,@cota)";
+            cmd.Parameters.AddWithValue("@auteur", o.Auteur);
+            cmd.Parameters.AddWithValue("@titre", o.Titre);
+            cmd.Parameters.AddWithValue("@cota", o.Cota);
+            cmd.ExecuteNonQuery();
+            return true;
         }
 
-        public override bool delete(Livre o)
+        public override bool delete(int o)
         {
-            throw new NotImplementedException();
+            MySqlCommand cmd = Connection.getMySqlCommand();
+            cmd.CommandText = "DELETE FROM livres WHERE id=" + o;
+            cmd.ExecuteNonQuery();
+            return true;
         }
 
         public override bool Modifier(Livre o)
         {
-            throw new NotImplementedException();
+            MySqlCommand cmd = Connection.getMySqlCommand();
+            cmd.CommandText = "UPDATE livres SET auteur= @auteur, titre=@titre, cota=@cota" +
+                    " WHERE id=" + o.Id; 
+            cmd.Parameters.AddWithValue("@auteur", o.Auteur);
+            cmd.Parameters.AddWithValue("@titre", o.Titre);
+            cmd.Parameters.AddWithValue("@cote", o.Cota);
+            cmd.ExecuteNonQuery();
+            return true;
         }
     }
 }

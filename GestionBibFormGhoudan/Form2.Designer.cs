@@ -30,9 +30,7 @@ namespace GestionBibFormGhoudan
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.f1DataSet = new GestionBibFormGhoudan.f1DataSet();
             this.emprunteursBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.emprunteursTableAdapter = new GestionBibFormGhoudan.f1DataSetTableAdapters.emprunteursTableAdapter();
             this.emprunteursBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,30 +40,23 @@ namespace GestionBibFormGhoudan
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.f1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emprunteursBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emprunteursBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // f1DataSet
             // 
-            this.f1DataSet.DataSetName = "f1DataSet";
-            this.f1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // emprunteursBindingSource
             // 
             this.emprunteursBindingSource.DataMember = "emprunteurs";
-            this.emprunteursBindingSource.DataSource = this.f1DataSet;
             // 
             // emprunteursTableAdapter
             // 
-            this.emprunteursTableAdapter.ClearBeforeFill = true;
             // 
             // emprunteursBindingSource1
             // 
             this.emprunteursBindingSource1.DataMember = "emprunteurs";
-            this.emprunteursBindingSource1.DataSource = this.f1DataSet;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -185,7 +176,6 @@ namespace GestionBibFormGhoudan
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.f1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emprunteursBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emprunteursBindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -194,9 +184,7 @@ namespace GestionBibFormGhoudan
         }
 
         #endregion
-        private f1DataSet f1DataSet;
         private System.Windows.Forms.BindingSource emprunteursBindingSource;
-        private f1DataSetTableAdapters.emprunteursTableAdapter emprunteursTableAdapter;
         private System.Windows.Forms.BindingSource emprunteursBindingSource1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

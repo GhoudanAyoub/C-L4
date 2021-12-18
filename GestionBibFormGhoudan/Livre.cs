@@ -11,25 +11,26 @@ namespace GestionBiblioGhoudan
         private int id;
         private String auteur;
         private String titre;
-        private DateTime? dateEmprunt;
+        private int cota;
 
-        public Livre(int id, string auteur, string titre,  DateTime? dateEmprunt)
+        public Livre(string auteur, string titre, int cota)
+        {
+            this.auteur = auteur;
+            this.titre = titre;
+            this.cota = cota;
+        }
+
+        public Livre(int id, string auteur, string titre, int cota)
         {
             this.id = id;
             this.auteur = auteur;
             this.titre = titre;
-            this.dateEmprunt = dateEmprunt;
-        }
-        public Livre( string auteur, string titre,  DateTime? dateEmprunt)
-        {
-            this.auteur = auteur;
-            this.titre = titre;
-            this.dateEmprunt = dateEmprunt;
+            this.cota = cota;
         }
 
+        public int Id { get => id; set => id = value; }
         public string Auteur { get => auteur; set => auteur = value; }
         public string Titre { get => titre; set => titre = value; }
-        public int Id { get => id; set => id = value; }
-        public DateTime? DateEmprunt { get => dateEmprunt; set => dateEmprunt = value; }
+        public int Cota { get => cota; set => cota = value; }
     }
 }

@@ -45,7 +45,7 @@ namespace GestionBibFormGhoudan.Services
         public override bool Modifier(Livre o)
         {
             MySqlCommand cmd = Connection.getMySqlCommand();
-            cmd.CommandText = "UPDATE livres SET auteur= @auteur, titre=@titre, cota=@cota" +
+            cmd.CommandText = "UPDATE livres SET auteur= @auteur, titre=@titre, cota=@cote" +
                     " WHERE id=" + o.Id; 
             cmd.Parameters.AddWithValue("@auteur", o.Auteur);
             cmd.Parameters.AddWithValue("@titre", o.Titre);

@@ -6,12 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GestionBibFormGhoudan
 {
@@ -24,10 +26,93 @@ namespace GestionBibFormGhoudan
         private CdService cdService = new CdService();
         private PeriodiqueService periodiqueService = new PeriodiqueService();
         private EmpruntService empruntService = new EmpruntService();
+        private Livre emruntedLivre;
+        private Cd emruntedCd;
+        private Periodique emruntedPeriodique;
         public Form1()
         {
             InitializeComponent();
+            fetchCharts();
+            fetchPie();
+        }
 
+        private void fetchPie()
+        {
+            chart2.Series.Clear();
+            chart2.Legends.Clear();
+
+            chart2.Legends.Add("Ouvrages Statistics");
+            chart2.Legends[0].LegendStyle = LegendStyle.Table;
+            chart2.Legends[0].Docking = Docking.Bottom;
+            chart2.Legends[0].Alignment = StringAlignment.Center;
+            chart2.Legends[0].Title = "Ouvrages ";
+            chart2.Legends[0].BorderColor = Color.Black;
+
+            string seriesname = "ouvrages";
+            chart2.Series.Add(seriesname);
+            chart2.Series[seriesname].ChartType = SeriesChartType.Pie;
+
+
+            string query = " SELECT ouvrageName, COUNT(ouvrageName)  \"Total N.\" FROM emprunteurs GROUP BY ouvrageName; ";
+
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+
+            MySqlCommand cmd = Connection.getMySqlCommand();
+            cmd.CommandText = query;
+            MyDA.SelectCommand = cmd;
+
+
+            DataTable dt = new DataTable();
+            MyDA.Fill(dt);
+            //Get the names of Cities.
+            string[] x = (from p in dt.AsEnumerable()
+                          orderby p.Field<string>("ouvrageName") ascending
+                          select p.Field<string>("ouvrageName")).ToArray();
+
+            //Get the Total of Orders for each City.
+            Int64[] y = (from p in dt.AsEnumerable()
+                       orderby p.Field<string>("ouvrageName") ascending
+                       select p.Field<Int64>("Total N.")).ToArray();
+            chart2.Series["ouvrages"].Points.DataBindXY(x, y);
+        }
+
+        private void fetchCharts()
+        {
+            chart1.Series.Clear();
+            chart1.Legends.Clear();
+
+            chart1.Legends.Add("Clients Statistics");
+            chart1.Legends[0].LegendStyle = LegendStyle.Table;
+            chart1.Legends[0].Docking = Docking.Bottom;
+            chart1.Legends[0].Alignment = StringAlignment.Center;
+            chart1.Legends[0].Title = "Clients ";
+            chart1.Legends[0].BorderColor = Color.Black;
+
+            string seriesname = "clients";
+            chart1.Series.Add(seriesname);
+            chart1.Series[seriesname].ChartType = SeriesChartType.Bar;
+            string query = " SELECT name, COUNT(name)  \"Total N.\" FROM emprunteurs GROUP BY name; ";
+
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+
+            MySqlCommand cmd = Connection.getMySqlCommand();
+            cmd.CommandText = query;
+            MyDA.SelectCommand = cmd;
+
+
+            DataTable dt = new DataTable();
+            MyDA.Fill(dt);
+
+            //Get the names of Cities.
+            string[] x = (from p in dt.AsEnumerable()
+                          orderby p.Field<string>("name") ascending
+                          select p.Field<string>("name")).ToArray();
+
+            //Get the Total of Orders for each City.
+            Int64[] y = (from p in dt.AsEnumerable()
+                       orderby p.Field<string>("name") ascending
+                       select p.Field<Int64>("Total N.")).ToArray();
+            chart1.Series[seriesname].Points.DataBindXY(x, y);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -131,6 +216,7 @@ namespace GestionBibFormGhoudan
             textBox8.Clear();
             textBox9.Clear();
             textBox10.Clear();
+            textBox11.Clear();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -319,21 +405,56 @@ namespace GestionBibFormGhoudan
 
         private void button22_Click(object sender, EventArgs e)
         {
-
-
-            if (textBox9.Text == "" || textBox10.Text == "" )
+            if (textBox9.Text == "" || textBox10.Text == "")
             {
                 DialogResult dialogClose = MessageBox.Show("Field Empty", "*", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-                empruntService.Ajouter(new emprunt(textBox10.Text, textBox10.Text, dateTimePicker5.Value, dateTimePicker4.Value, textBox9.Text, textBox11.Text));
-                Clean();
-                refrechEmp();
+                int i = 0;
+                foreach (DataGridViewRow row in this.dataGridView4.Rows)
+                    if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().ToLower().Contains(textBox10.Text.ToLower())) 
+                        i++;
+                foreach (DataGridViewRow row in this.dataGridView4.Rows){
+                        if (i <= 3 ){
+                            String vall = i == 1 ? " un " : " Deux ";
+                            MessageBox.Show("Ce Client Deja Emprunter "+ vall + " " + row.Cells[5].Value.ToString(), "Close", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                            add();
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ce Client a Emprunter Le max Des Ouvrages ", "Close", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                            Clean();
+                            return;
+                        }
+                }       
+                add();
             }
         }
 
+        private void add()
+        {
+            empruntService.Ajouter(new emprunt(textBox10.Text, textBox10.Text, dateTimePicker5.Value, dateTimePicker4.Value, textBox9.Text, textBox11.Text));
+            if (textBox9.Text.ToLower().Contains("livre"))
+            {
+                livreService.Modifier(emruntedLivre);
+                refrechLivre();
+            }
+            else if (textBox9.Text.ToLower().Contains("cd"))
+            {
+                cdService.Modifier(emruntedCd);
+                refrechCd();
+            }
+            else if (textBox9.Text.ToLower().Contains("per"))
+            {
+                periodiqueService.Modifier(emruntedPeriodique);
+                refrechPer();
+            }
+            Clean();
+            refrechEmp();
+        }
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -391,23 +512,6 @@ namespace GestionBibFormGhoudan
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            textBox9.Text = "CD";
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-
-            textBox9.Text = "Livre";
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-
-            textBox9.Text = "Periodique";
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -489,6 +593,78 @@ namespace GestionBibFormGhoudan
             button8.Enabled = true;
             button9.Enabled = true;
             button7.Enabled = false;
+        }
+
+        private void Nouveau_Click(object sender, EventArgs e)
+        {
+            new NewClient().Show();
+        }
+
+        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            DataGridViewRow row = this.dataGridView5.Rows[e.RowIndex];
+            currRowIndex = Convert.ToInt32(row.Cells[0].Value);
+            textBox11.Text = row.Cells[1].Value.ToString();
+            textBox9.Text = row.Cells[2].Value.ToString();
+            if (textBox9.Text.ToLower().Contains("livre"))
+            {
+                emruntedLivre = new Livre(Convert.ToInt32(row.Cells[0].Value), row.Cells[1].Value.ToString(),row.Cells[2].Value.ToString(),Convert.ToInt32( row.Cells[3].Value)-1);
+            }
+            else if (textBox9.Text.ToLower().Contains("cd"))
+            {
+                emruntedCd = new Cd(Convert.ToInt32(row.Cells[0].Value), row.Cells[1].Value.ToString(),row.Cells[2].Value.ToString(),Convert.ToInt32( row.Cells[3].Value)-1);
+            }
+            else if (textBox9.Text.ToLower().Contains("per"))
+            {
+                emruntedPeriodique = new Periodique(Convert.ToInt32(row.Cells[0].Value), row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[2].Value), row.Cells[3].Value.ToString(),Convert.ToInt32( row.Cells[4].Value)-1);
+            }
+        }
+
+        private void button15_Click_1(object sender, EventArgs e)
+        {
+            string sqlSelectAll ="";
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            MySqlDataAdapter MyDA2 = new MySqlDataAdapter();
+            MySqlDataAdapter MyDA3 = new MySqlDataAdapter();
+      
+            if (textBox13.Text.ToLower().Contains("cd"))
+            {
+                sqlSelectAll = "select * from cd where LOWER(cd.titre) like '" + textBox13.Text.ToLower() + "'; ";
+
+            }
+            else if (textBox13.Text.ToLower().Contains("livre"))
+            {
+                sqlSelectAll = "select * from livres where  LOWER(livres.titre) like '" + textBox13.Text.ToLower() + "' ; ";
+
+            }
+            else if (textBox13.Text.ToLower().Contains("per"))
+            {
+                sqlSelectAll = "select * from periodiques where  LOWER(periodiques.nom) like '" + textBox13.Text.ToLower() + "'  ; ";
+            }
+            DataTable table = new DataTable();
+            MySqlCommand cmd = Connection.getMySqlCommand();
+            cmd.CommandText = sqlSelectAll;
+            MyDA.SelectCommand = cmd;
+            MyDA.Fill(table);
+
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = table;
+
+            dataGridView5.DataSource = bSource;
+            dataGridView5.Update();
+            dataGridView5.Refresh();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            ChartPanel.BringToFront();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            fetchCharts();
+            fetchPie();
         }
     }
 }

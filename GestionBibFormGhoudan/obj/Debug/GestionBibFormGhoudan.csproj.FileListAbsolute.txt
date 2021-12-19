@@ -32,3 +32,4 @@ C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\K4os.Hash.xxHas
 C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\System.Buffers.dll
 C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\MySql.Data.xml
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.NewClient.resources

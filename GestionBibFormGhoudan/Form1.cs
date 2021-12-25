@@ -413,13 +413,22 @@ namespace GestionBibFormGhoudan
             else
             {
                 int i = 0;
+                int j = 0;
                 foreach (DataGridViewRow row in this.dataGridView4.Rows)
                     if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().ToLower().Contains(textBox10.Text.ToLower())) 
                         i++;
+                foreach (DataGridViewRow row in this.dataGridView4.Rows)
+                    if (row.Cells[5].Value != null && row.Cells[5].Value.ToString().ToLower().Contains(textBox11.Text.ToLower())) 
+                        j++;
                 foreach (DataGridViewRow row in this.dataGridView4.Rows){
-                        if (i <= 3 ){
+                    if (j == 1)
+                    {
+                        MessageBox.Show("Ce Client ne peux pas Emprunter le meme livre" + row.Cells[5].Value.ToString(), "Close", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else if (i <= 3 ){
                             String vall = i == 1 ? " un " : " Deux ";
-                            MessageBox.Show("Ce Client Deja Emprunter "+ vall + " " + row.Cells[5].Value.ToString(), "Close", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                            MessageBox.Show("Ce Client Deja Emprunter "+ vall + " ouvrages ", "Close", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                             add();
                             return;
                         }

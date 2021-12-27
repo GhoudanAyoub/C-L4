@@ -40,7 +40,8 @@ namespace GestionBibFormGhoudan
             if (table.Rows[0][0].ToString() == "1")
             {
                 this.Hide();
-                new Form1().Show();
+                if (EmpruntService.currentClientLevel.Contains("Admin")) new Form1().Show();
+                else new clientInterface().Show();
             }
             else
             {

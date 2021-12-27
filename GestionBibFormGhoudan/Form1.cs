@@ -117,7 +117,7 @@ namespace GestionBibFormGhoudan
             chart2.Series[seriesname].ChartType = SeriesChartType.Pie;
 
 
-            string query = " SELECT ouvrageName, COUNT(ouvrageName)  \"Total N.\" FROM emprunteurs GROUP BY ouvrageName; ";
+            string query = " SELECT type_ouvrage, COUNT(type_ouvrage)  \"Total N.\" FROM emprunteurs GROUP BY type_ouvrage; ";
 
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
 
@@ -130,12 +130,12 @@ namespace GestionBibFormGhoudan
             MyDA.Fill(dt);
             //Get the names of Cities.
             string[] x = (from p in dt.AsEnumerable()
-                          orderby p.Field<string>("ouvrageName") ascending
-                          select p.Field<string>("ouvrageName")).ToArray();
+                          orderby p.Field<string>("type_ouvrage") ascending
+                          select p.Field<string>("type_ouvrage")).ToArray();
 
             //Get the Total of Orders for each City.
             Int64[] y = (from p in dt.AsEnumerable()
-                       orderby p.Field<string>("ouvrageName") ascending
+                       orderby p.Field<string>("type_ouvrage") ascending
                        select p.Field<Int64>("Total N.")).ToArray();
             chart2.Series["ouvrages"].Points.DataBindXY(x, y);
         }
@@ -480,33 +480,47 @@ namespace GestionBibFormGhoudan
                     if (row.Cells[1].Value != null && row.Cells[1].Value.ToString().ToLower().Contains(textBox10.Text.ToLower())) 
                         i++;
                 foreach (DataGridViewRow row in this.dataGridView4.Rows)
-                    if (row.Cells[5].Value != null && row.Cells[5].Value.ToString().ToLower().Contains(textBox11.Text.ToLower())) 
+                    if (row.Cells[5].Value != null && row.Cells[5].Value.ToString().ToLower().Contains(textBox9.Text.ToLower())) 
                         j++;
+                checkUserPriv();
                 foreach (DataGridViewRow row in this.dataGridView4.Rows){
                     if (j == 1)
                     {
-                        MessageBox.Show("Ce Client ne peux pas Emprunter le meme livre" + row.Cells[5].Value.ToString(), "Close", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                        MessageBox.Show("Ce Client ne peux pas Emprunter le meme Ouvrage" , "Close", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                         return;
-                    }
-                    else if (i == 0)
-                    {
-
-                        add();
-                        return;
-                    }
-                    else if (i!=0 && i <= 3 ){
+                    }else if (i!=0 && i < 3 ){
                             String vall = i == 1 ? " un " : " Deux ";
                             MessageBox.Show("Ce Client Deja Emprunter "+ vall + " ouvrages ", "Close", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                             add();
                             return;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Ce Client a Emprunter Le max Des Ouvrages ", "Close", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                            Clean();
-                            return;
-                        }
-                }       
+                    }
+                }
+            }
+        }
+
+        private void checkUserPriv()
+        {
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            string sqlSelectAll = "select Count(*) from emprunteurs  where name = '" + textBox10.Text + "' ";
+
+            MySqlCommand cmd = Connection.getMySqlCommand();
+            cmd.CommandText = sqlSelectAll;
+            MyDA.SelectCommand = cmd;
+
+            DataTable table = new DataTable();
+            MyDA.Fill(table);
+
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = table;
+
+            if (table.Rows[0][0].ToString() == "0")
+            {
+                add();
+            }
+            else if (table.Rows[0][0].ToString() == "3")
+            {
+                MessageBox.Show("Ce Client a Emprunter Le max Des Ouvrages ", "Close", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                Clean();
             }
         }
 
@@ -556,6 +570,7 @@ namespace GestionBibFormGhoudan
             {
                 dataGridView4.Rows.RemoveAt(rowIndex);
                 empruntService.delete(currRowIndex);
+                updateOuvrage();
 
             }
 
@@ -563,6 +578,11 @@ namespace GestionBibFormGhoudan
             button20.Enabled = false;
             button19.Enabled = false;
             button22.Enabled = true;
+        }
+
+        private void updateOuvrage()
+        {
+            dataGridView1.Rows[1].Cells[3].Value = 96;
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -693,7 +713,7 @@ namespace GestionBibFormGhoudan
             }
             else if (textBox9.Text.ToLower().Contains("per"))
             {
-                emruntedPeriodique = new Periodique(Convert.ToInt32(row.Cells[0].Value), row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[2].Value), row.Cells[3].Value.ToString(),Convert.ToInt32( row.Cells[4].Value)-1);
+                emruntedPeriodique = new Periodique(Convert.ToInt32(row.Cells[0].Value), row.Cells[1].Value.ToString(), Convert.ToInt32(row.Cells[3].Value), row.Cells[2].Value.ToString(),Convert.ToInt32( row.Cells[4].Value)-1);
             }
         }
 
@@ -832,12 +852,6 @@ namespace GestionBibFormGhoudan
         private void button26_Click(object sender, EventArgs e)
         {
 
-            if (textBox1.Text.Equals("") || textBox2.Text.Equals("") || textBox3.Text.Equals("") || comboBox111.Text.Equals(""))
-            {
-                MessageBox.Show("Remplis les champs");
-            }
-            else
-            {
 
                     MySqlDataAdapter MyDA = new MySqlDataAdapter();
                     string sqlSelectAll = "select Count(*) from user  where username = '" + textBox16.Text + "' ";
@@ -865,9 +879,6 @@ namespace GestionBibFormGhoudan
                     }
                     else MessageBox.Show("Error");
                     }
-
-
-            }
            
         }
 
@@ -911,16 +922,27 @@ namespace GestionBibFormGhoudan
 
         private void button25_Click(object sender, EventArgs e)
         {
-            dataGridView6.Rows.RemoveAt(currRowIndex);
            deleteUser(currRowIndex);
+            refrechusers();
         }
 
         private void deleteUser(int currRowIndex)
         {
-            MySqlCommand cmd = Connection.getMySqlCommand();
-            cmd.CommandText = "DELETE FROM user WHERE id=" + currRowIndex;
-            cmd.ExecuteNonQuery();
-            clearUser();
+            if (checkUSer())
+            {
+                    MySqlCommand cmd = Connection.getMySqlCommand();
+                    cmd.CommandText = "DELETE FROM user WHERE id=" + currRowIndex;
+                    cmd.ExecuteNonQuery();
+                    clearUser();
+            }
+            else MessageBox.Show("You cant Delete your self :)");
+        }
+
+        private bool checkUSer()
+        {
+           
+            if(textBox16.Text.Contains(EmpruntService.currentClientUsername)) return false;
+            return true;
         }
 
         private void dataGridView6_CellContentClick(object sender, DataGridViewCellEventArgs e)

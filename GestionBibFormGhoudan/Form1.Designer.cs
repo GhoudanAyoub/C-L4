@@ -30,13 +30,13 @@ namespace GestionBibFormGhoudan
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -47,6 +47,8 @@ namespace GestionBibFormGhoudan
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button23 = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.button16 = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -112,6 +114,7 @@ namespace GestionBibFormGhoudan
             this.periodiquesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.periodiquesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.EmpruntPanel = new System.Windows.Forms.Panel();
+            this.button18 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.textBox13 = new System.Windows.Forms.TextBox();
@@ -135,6 +138,13 @@ namespace GestionBibFormGhoudan
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emprunteursBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.emprunteursBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.livresTableAdapter1 = new GestionBibFormGhoudan.f1DataSetTableAdapters.livresTableAdapter();
@@ -145,27 +155,19 @@ namespace GestionBibFormGhoudan
             this.button17 = new System.Windows.Forms.Button();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.userpanel = new System.Windows.Forms.Panel();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userTableAdapter = new GestionBibFormGhoudan.f1DataSetTableAdapters.userTableAdapter();
+            this.label33 = new System.Windows.Forms.Label();
+            this.comboBox111 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label32 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -174,18 +176,17 @@ namespace GestionBibFormGhoudan
             this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label32 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox111 = new System.Windows.Forms.ComboBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button24 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.userTableAdapter = new GestionBibFormGhoudan.f1DataSetTableAdapters.userTableAdapter();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -212,7 +213,6 @@ namespace GestionBibFormGhoudan
             this.ChartPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.userpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -348,6 +348,32 @@ namespace GestionBibFormGhoudan
             this.panel1.Size = new System.Drawing.Size(307, 688);
             this.panel1.TabIndex = 13;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button23
+            // 
+            this.button23.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button23.Font = new System.Drawing.Font("Lucida Bright", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.ForeColor = System.Drawing.Color.White;
+            this.button23.Location = new System.Drawing.Point(83, 477);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(221, 71);
+            this.button23.TabIndex = 12;
+            this.button23.Text = "Users";
+            this.button23.UseVisualStyleBackColor = false;
+            this.button23.Visible = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(12, 477);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(57, 73);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 11;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Visible = false;
             // 
             // button16
             // 
@@ -1071,6 +1097,21 @@ namespace GestionBibFormGhoudan
             this.EmpruntPanel.Size = new System.Drawing.Size(1024, 688);
             this.EmpruntPanel.TabIndex = 17;
             // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button18.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.ForeColor = System.Drawing.Color.White;
+            this.button18.Location = new System.Drawing.Point(811, 340);
+            this.button18.Margin = new System.Windows.Forms.Padding(4);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(164, 37);
+            this.button18.TabIndex = 147;
+            this.button18.Text = "Imprimer";
+            this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -1218,7 +1259,7 @@ namespace GestionBibFormGhoudan
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(164, 37);
             this.button20.TabIndex = 124;
-            this.button20.Text = "Supprimer";
+            this.button20.Text = "return";
             this.button20.UseVisualStyleBackColor = false;
             this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
@@ -1351,6 +1392,62 @@ namespace GestionBibFormGhoudan
             this.dataGridView4.TabIndex = 135;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn28.HeaderText = "id";
+            this.dataGridViewTextBoxColumn28.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn29.HeaderText = "name";
+            this.dataGridViewTextBoxColumn29.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "cin";
+            this.dataGridViewTextBoxColumn30.HeaderText = "cin";
+            this.dataGridViewTextBoxColumn30.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "date_emprunt";
+            this.dataGridViewTextBoxColumn31.HeaderText = "date_emprunt";
+            this.dataGridViewTextBoxColumn31.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "delai";
+            this.dataGridViewTextBoxColumn32.HeaderText = "delai";
+            this.dataGridViewTextBoxColumn32.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "type_ouvrage";
+            this.dataGridViewTextBoxColumn33.HeaderText = "type_ouvrage";
+            this.dataGridViewTextBoxColumn33.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "ouvrageName";
+            this.dataGridViewTextBoxColumn34.HeaderText = "Autheur";
+            this.dataGridViewTextBoxColumn34.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.Width = 125;
+            // 
             // emprunteursBindingSource1
             // 
             this.emprunteursBindingSource1.DataMember = "emprunteurs";
@@ -1400,78 +1497,37 @@ namespace GestionBibFormGhoudan
             // 
             // chart2
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chart2.Legends.Add(legend7);
+            chartArea9.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chart2.Legends.Add(legend9);
             this.chart2.Location = new System.Drawing.Point(564, 6);
             this.chart2.Name = "chart2";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series7.Legend = "Legend1";
-            series7.Name = "ouvrages";
-            this.chart2.Series.Add(series7);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series9.Legend = "Legend1";
+            series9.Name = "ouvrages";
+            this.chart2.Series.Add(series9);
             this.chart2.Size = new System.Drawing.Size(446, 444);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
             // 
             // chart1
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            chartArea10.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chart1.Legends.Add(legend10);
             this.chart1.Location = new System.Drawing.Point(3, 8);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series8.Legend = "Legend1";
-            series8.Name = "clients";
-            this.chart1.Series.Add(series8);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series10.Legend = "Legend1";
+            series10.Name = "clients";
+            this.chart1.Series.Add(series10);
             this.chart1.Size = new System.Drawing.Size(556, 442);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            // 
-            // button18
-            // 
-            this.button18.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.ForeColor = System.Drawing.Color.White;
-            this.button18.Location = new System.Drawing.Point(811, 340);
-            this.button18.Margin = new System.Windows.Forms.Padding(4);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(164, 37);
-            this.button18.TabIndex = 147;
-            this.button18.Text = "Imprimer";
-            this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // button23
-            // 
-            this.button23.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Font = new System.Drawing.Font("Lucida Bright", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.ForeColor = System.Drawing.Color.White;
-            this.button23.Location = new System.Drawing.Point(83, 477);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(221, 71);
-            this.button23.TabIndex = 12;
-            this.button23.Text = "Users";
-            this.button23.UseVisualStyleBackColor = false;
-            this.button23.Visible = false;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(12, 477);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(57, 73);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 11;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Visible = false;
             // 
             // userpanel
             // 
@@ -1499,6 +1555,88 @@ namespace GestionBibFormGhoudan
             this.userpanel.Size = new System.Drawing.Size(1024, 688);
             this.userpanel.TabIndex = 18;
             this.userpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.userpanel_Paint);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Black;
+            this.label33.Location = new System.Drawing.Point(36, 28);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(337, 36);
+            this.label33.TabIndex = 47;
+            this.label33.Text = "Gestion des Utilisateurs";
+            // 
+            // comboBox111
+            // 
+            this.comboBox111.FormattingEnabled = true;
+            this.comboBox111.Items.AddRange(new object[] {
+            "Admin",
+            "SimpleUser"});
+            this.comboBox111.Location = new System.Drawing.Point(132, 218);
+            this.comboBox111.Name = "comboBox111";
+            this.comboBox111.Size = new System.Drawing.Size(210, 28);
+            this.comboBox111.TabIndex = 132;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(576, 228);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(210, 27);
+            this.dateTimePicker1.TabIndex = 131;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(469, 232);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(90, 20);
+            this.label32.TabIndex = 54;
+            this.label32.Text = "BirthDate";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(20, 269);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(45, 20);
+            this.label27.TabIndex = 52;
+            this.label27.Text = "City";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(576, 170);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(210, 27);
+            this.textBox18.TabIndex = 51;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(469, 173);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(54, 20);
+            this.label30.TabIndex = 50;
+            this.label30.Text = "Email";
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(576, 121);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(210, 27);
+            this.textBox19.TabIndex = 49;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(469, 124);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(36, 20);
+            this.label31.TabIndex = 48;
+            this.label31.Text = "Nom";
             // 
             // textBox14
             // 
@@ -1542,126 +1680,6 @@ namespace GestionBibFormGhoudan
             this.dataGridView6.Size = new System.Drawing.Size(1010, 260);
             this.dataGridView6.TabIndex = 45;
             this.dataGridView6.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellContentClick);
-            // 
-            // button24
-            // 
-            this.button24.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button24.Enabled = false;
-            this.button24.ForeColor = System.Drawing.Color.White;
-            this.button24.Location = new System.Drawing.Point(878, 237);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(126, 36);
-            this.button24.TabIndex = 44;
-            this.button24.Text = "Modifier";
-            this.button24.UseVisualStyleBackColor = false;
-            this.button24.Click += new System.EventHandler(this.button24_Click);
-            // 
-            // button25
-            // 
-            this.button25.BackColor = System.Drawing.Color.Maroon;
-            this.button25.ForeColor = System.Drawing.Color.White;
-            this.button25.Location = new System.Drawing.Point(878, 169);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(126, 36);
-            this.button25.TabIndex = 43;
-            this.button25.Text = "Supprimer";
-            this.button25.UseVisualStyleBackColor = false;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
-            // 
-            // button26
-            // 
-            this.button26.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button26.ForeColor = System.Drawing.Color.White;
-            this.button26.Location = new System.Drawing.Point(878, 113);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(126, 36);
-            this.button26.TabIndex = 42;
-            this.button26.Text = "Ajouter";
-            this.button26.UseVisualStyleBackColor = false;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(132, 170);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(210, 27);
-            this.textBox15.TabIndex = 39;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(22, 179);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(81, 20);
-            this.label28.TabIndex = 38;
-            this.label28.Text = "Password";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(132, 121);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(210, 27);
-            this.textBox16.TabIndex = 37;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(25, 128);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(81, 20);
-            this.label29.TabIndex = 36;
-            this.label29.Text = "UserName";
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataMember = "user";
-            this.userBindingSource.DataSource = this.f1DataSet1;
-            // 
-            // userTableAdapter
-            // 
-            this.userTableAdapter.ClearBeforeFill = true;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(20, 269);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(45, 20);
-            this.label27.TabIndex = 52;
-            this.label27.Text = "City";
-            this.label27.Click += new System.EventHandler(this.label27_Click);
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(576, 170);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(210, 27);
-            this.textBox18.TabIndex = 51;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(469, 173);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(54, 20);
-            this.label30.TabIndex = 50;
-            this.label30.Text = "Email";
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(576, 121);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(210, 27);
-            this.textBox19.TabIndex = 49;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(469, 124);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(36, 20);
-            this.label31.TabIndex = 48;
-            this.label31.Text = "Nom";
             // 
             // dataGridViewTextBoxColumn40
             // 
@@ -1735,101 +1753,83 @@ namespace GestionBibFormGhoudan
             this.cityDataGridViewTextBoxColumn.ReadOnly = true;
             this.cityDataGridViewTextBoxColumn.Width = 125;
             // 
-            // label32
+            // userBindingSource
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(469, 232);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(90, 20);
-            this.label32.TabIndex = 54;
-            this.label32.Text = "BirthDate";
+            this.userBindingSource.DataMember = "user";
+            this.userBindingSource.DataSource = this.f1DataSet1;
             // 
-            // dateTimePicker1
+            // button24
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(576, 228);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(210, 27);
-            this.dateTimePicker1.TabIndex = 131;
+            this.button24.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button24.Enabled = false;
+            this.button24.ForeColor = System.Drawing.Color.White;
+            this.button24.Location = new System.Drawing.Point(878, 237);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(126, 36);
+            this.button24.TabIndex = 44;
+            this.button24.Text = "Modifier";
+            this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
-            // comboBox111
+            // button25
             // 
-            this.comboBox111.FormattingEnabled = true;
-            this.comboBox111.Items.AddRange(new object[] {
-            "Admin",
-            "SimpleUser"});
-            this.comboBox111.Location = new System.Drawing.Point(132, 218);
-            this.comboBox111.Name = "comboBox111";
-            this.comboBox111.Size = new System.Drawing.Size(210, 28);
-            this.comboBox111.TabIndex = 132;
+            this.button25.BackColor = System.Drawing.Color.Maroon;
+            this.button25.ForeColor = System.Drawing.Color.White;
+            this.button25.Location = new System.Drawing.Point(878, 169);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(126, 36);
+            this.button25.TabIndex = 43;
+            this.button25.Text = "Supprimer";
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
-            // label33
+            // button26
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(36, 28);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(337, 36);
-            this.label33.TabIndex = 47;
-            this.label33.Text = "Gestion des Utilisateurs";
+            this.button26.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button26.ForeColor = System.Drawing.Color.White;
+            this.button26.Location = new System.Drawing.Point(878, 113);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(126, 36);
+            this.button26.TabIndex = 42;
+            this.button26.Text = "Ajouter";
+            this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
-            // dataGridViewTextBoxColumn28
+            // textBox15
             // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn28.HeaderText = "id";
-            this.dataGridViewTextBoxColumn28.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.Width = 125;
+            this.textBox15.Location = new System.Drawing.Point(132, 170);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(210, 27);
+            this.textBox15.TabIndex = 39;
             // 
-            // dataGridViewTextBoxColumn29
+            // label28
             // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn29.HeaderText = "name";
-            this.dataGridViewTextBoxColumn29.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.Width = 125;
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(22, 179);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(81, 20);
+            this.label28.TabIndex = 38;
+            this.label28.Text = "Password";
             // 
-            // dataGridViewTextBoxColumn30
+            // textBox16
             // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "cin";
-            this.dataGridViewTextBoxColumn30.HeaderText = "cin";
-            this.dataGridViewTextBoxColumn30.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.Width = 125;
+            this.textBox16.Location = new System.Drawing.Point(132, 121);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(210, 27);
+            this.textBox16.TabIndex = 37;
             // 
-            // dataGridViewTextBoxColumn31
+            // label29
             // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "date_emprunt";
-            this.dataGridViewTextBoxColumn31.HeaderText = "date_emprunt";
-            this.dataGridViewTextBoxColumn31.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            this.dataGridViewTextBoxColumn31.Width = 125;
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(25, 128);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(81, 20);
+            this.label29.TabIndex = 36;
+            this.label29.Text = "UserName";
             // 
-            // dataGridViewTextBoxColumn32
+            // userTableAdapter
             // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "delai";
-            this.dataGridViewTextBoxColumn32.HeaderText = "delai";
-            this.dataGridViewTextBoxColumn32.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            this.dataGridViewTextBoxColumn32.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "type_ouvrage";
-            this.dataGridViewTextBoxColumn33.HeaderText = "type_ouvrage";
-            this.dataGridViewTextBoxColumn33.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "ouvrageName";
-            this.dataGridViewTextBoxColumn34.HeaderText = "Autheur";
-            this.dataGridViewTextBoxColumn34.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.Width = 125;
+            this.userTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -1851,6 +1851,7 @@ namespace GestionBibFormGhoudan
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -1881,7 +1882,6 @@ namespace GestionBibFormGhoudan
             this.ChartPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.userpanel.ResumeLayout(false);
             this.userpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();

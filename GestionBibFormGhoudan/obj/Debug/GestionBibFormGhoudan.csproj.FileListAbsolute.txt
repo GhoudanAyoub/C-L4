@@ -33,3 +33,6 @@ C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\System.Buffers.
 C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\MySql.Data.xml
 C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.NewClient.resources
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\obj\Debug\GestionBibFormGhoudan.clientInterface.resources
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\itextsharp.dll
+C:\Users\ayoub\Source\Repos\C-L4\GestionBibFormGhoudan\bin\Debug\itextsharp.xml

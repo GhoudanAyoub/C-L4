@@ -13,6 +13,10 @@ namespace GestionBibFormGhoudan.Services
 {
     class EmpruntService : Biblioteque<emprunt>
     {
+        public static String currentClientLevel;
+        public static String currentClientUsername;
+
+
         public override BindingSource afficher()
         {
             MySqlDataAdapter MyDA = new MySqlDataAdapter();

@@ -1,4 +1,5 @@
 ﻿using GestionBibFormGhoudan.Db;
+using GestionBibFormGhoudan.Services;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,10 @@ namespace GestionBibFormGhoudan
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            setCurrentUser();
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            string sqlSelectAll = "SELECT COUNT(*) FROM user WHERE username='" + textBox1.Text + "' AND password='" + textBox2.Text + "'";
+            string sqlSelectAll = "SELECT COUNT(*),username FROM user WHERE username='" + textBox1.Text + "' AND password='" + textBox2.Text + "'";
 
             MySqlCommand cmd = Connection.getMySqlCommand();
             cmd.CommandText = sqlSelectAll;
@@ -35,7 +38,8 @@ namespace GestionBibFormGhoudan
             DataTable table = new DataTable();
             MyDA.Fill(table);
             if (table.Rows[0][0].ToString() == "1")
-            {this.Hide();
+            {
+                this.Hide();
                 new Form1().Show();
             }
             else
@@ -43,6 +47,23 @@ namespace GestionBibFormGhoudan
                 MessageBox.Show("Veuillez vérifier vos informations de login ! ", "info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBox1.Text = "";
                 textBox2.Text = "";
+            }
+        }
+
+        private void setCurrentUser()
+        {
+            MySqlDataAdapter MyDA2 = new MySqlDataAdapter();
+            string sqlSelectAll2 = "SELECT level,username FROM user WHERE username='" + textBox1.Text + "' AND password='" + textBox2.Text + "'";
+
+            MySqlCommand cmd2 = Connection.getMySqlCommand();
+            cmd2.CommandText = sqlSelectAll2;
+            MyDA2.SelectCommand = cmd2;
+            DataTable table2 = new DataTable();
+            MyDA2.Fill(table2);
+           if(table2.Rows.Count!=0)
+            {
+                EmpruntService.currentClientLevel = table2.Rows[0].Field<String>("level");
+                EmpruntService.currentClientUsername = table2.Rows[0].Field<String>("username");
             }
         }
 
